@@ -29,15 +29,5 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 10px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: rgb(40, 40, 40);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 175, 29, 0.5);
-  border-radius: 10px;
-  border: 2px solid rgba(40, 40, 40);
+  display: none;
 }

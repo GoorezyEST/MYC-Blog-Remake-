@@ -128,7 +128,7 @@
 /* LAST ART CSS */
 
 .welcome_lastart {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -143,4 +143,32 @@
   color: rgb(0, 175, 29);
   cursor: default;
   user-select: none;
+}
+
+/* FAQ CSS */
+
+.faq_section {
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.faq_title {
+  font-size: 32px;
+  font-weight: 800;
+  color: rgb(40, 40, 40);
+  cursor: default;
+  user-select: none;
+}
+
+.faq_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }

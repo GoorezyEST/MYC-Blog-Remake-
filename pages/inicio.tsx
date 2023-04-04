@@ -6,6 +6,14 @@ import LastArticle from "@/functions/lastarticle";
 import { BiChevronsDown } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import FAQBox from "@/functions/FAQBox";
+import Footer from "@/components/Footer";
+
+type Faq = {
+  question: string;
+  answer: string;
+  open: boolean;
+};
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -19,6 +27,40 @@ export default function Home() {
       clearTimeout(timeoutId);
     };
   }, []);
+
+  const [faqs, setFaqs] = useState<Faq[]>([
+    {
+      question: "¿Cuál es el propósito de este sitio web?",
+      answer:
+        "MYC (Mate y código) se creó con la finalidad de poder almacenar mis conocimientos de forma ordenada y cómoda, y a su vez, poder compartirlo con el resto de la comunidad de desarrolladores de una manera sencilla.",
+      open: false,
+    },
+    {
+      question: "¿Qué tecnologías se usaron?",
+      answer:
+        "Para crear MYC (Mate y código) se utilizó el framework NextJS, junto a herramientas externas para brindar una mejor experiencia al usuario como “react-icons” o “framer-motion.",
+      open: false,
+    },
+    {
+      question: "¿Cada cuanto se sube un artículo?",
+      answer:
+        "En MYC (Mate y código) solo yo me encargo de escribir los artículos, y debido a que estoy estudiando tecnologías nuevas y buscando una oportunidad laboral, no poseo un tiempo libre suficiente para mantener una constancia continua con los artículos. Aún así se suele subir al menos un artículo por mes.",
+      open: false,
+    },
+  ]);
+
+  const toggleFAQ = (index: number) => {
+    setFaqs(
+      faqs.map((faq, i) => {
+        if (i === index) {
+          faq.open = !faq.open;
+        } else {
+          faq.open = false;
+        }
+        return faq;
+      })
+    );
+  };
 
   return (
     <>
@@ -94,6 +136,37 @@ export default function Home() {
             <LastArticle />
           </motion.div>
         </section>
+        <section className={styles.faq_section}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.75,
+              delay: 0.25,
+            }}
+          >
+            <span className={styles.faq_title}>Preguntas frecuentes</span>
+          </motion.div>
+          <div className={styles.faq_content}>
+            {faqs.map((item, i) => {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{
+                    duration: 0.75,
+                    delay: 0.25,
+                  }}
+                >
+                  <FAQBox faq={item} key={i} index={i} toggleFAQ={toggleFAQ} />
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+        <Footer />
       </main>
     </>
   );
