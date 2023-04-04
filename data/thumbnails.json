@@ -1,0 +1,103 @@
+{
+  "articles": [
+    {
+      "title": "Carta 3D CSS",
+      "img": "https://i.imgur.com/IVkHAER.png",
+      "alt": "Photo related to the article",
+      "description": "Descubre cómo dar vida a tus proyectos con solo HTML y CSS al crear un impresionante efecto 3D al pasar el cursor sobre una carta. ¡Haz clic aquí para aprender más y darle un toque especial a tus diseños!",
+      "date": "15 / 1 / 2023",
+      "tipo": "css",
+      "link": "/3d-css-carta"
+    },
+    {
+      "title": "i18n Básico React",
+      "img": "https://i.imgur.com/X9Wfi0K.png",
+      "alt": "Photo related to the article",
+      "description": "Aprende a utilizar i18n en tus aplicacion de React para que estas obtengan un mayor alcance teniendo la propiedad de poseer multiples lenguages. ¡Haz click aqui y aprende como!",
+      "date": "16 / 1 / 2023",
+      "tipo": "code",
+      "link": "/i18n-react"
+    },
+    {
+      "title": "Etiquetas meta y favicons",
+      "img": "https://i.imgur.com/dewhXet.png",
+      "alt": "Photo related to the article",
+      "description": "Etiquetas meta basicas para incrementar el SEO de tu sitio web. Y una forma sencilla de como generar tus favicons facil y rapido. ¡Haz click aqui para ver más!",
+      "date": "31 / 1 / 2023",
+      "tipo": "code",
+      "link": "/meta-tag-favs"
+    },
+    {
+      "title": "Singleton",
+      "img": "https://i.imgur.com/wk8YZKU.png",
+      "alt": "Photo related to the article",
+      "description": "Un patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto. ¡Aprende singleton!",
+      "date": "09 / 2 / 2023",
+      "tipo": "code",
+      "link": "/pd-singleton"
+    },
+    {
+      "title": "Factory",
+      "img": "https://i.imgur.com/NqY6SIe.png",
+      "alt": "Photo related to the article",
+      "description": "El patron factory consiste en utilizar una clase constructora abstracta con unos cuantos métodos definidos y otro abstracto. ¡Click aqui para ver!",
+      "date": "10 / 2 / 2023",
+      "tipo": "code",
+      "link": "/pd-factory"
+    },
+    {
+      "title": "Abstract factory",
+      "img": "https://i.imgur.com/8uDHU1i.png",
+      "alt": "Photo related to the article",
+      "description": "Abstract Factory es un patrón de diseño creacional que resuelve el problema de crear familias enteras de productos sin especificar sus clases concretas. ¡Ver aqui!",
+      "date": "13 / 2 / 2023",
+      "tipo": "code",
+      "link": "/pd-abstract-factory"
+    },
+    {
+      "title": "Prototype",
+      "img": "https://i.imgur.com/TwQftzR.png",
+      "alt": "Photo related to the article",
+      "description": "El patrón de diseño prototipo tiene como finalidad crear nuevos objetos clonando una instancia creada previamente. Para aprenderlo haz click aqui",
+      "date": "15 / 2 / 2023",
+      "tipo": "code",
+      "link": "/pd-prototype"
+    },
+    {
+      "title": "Facade",
+      "img": "https://i.imgur.com/YkB10vp.png",
+      "alt": "Photo related to the article",
+      "description": "El patrón de diseño facade esta motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.",
+      "date": "17 / 2 / 2023",
+      "tipo": "code",
+      "link": "/pd-facade"
+    },
+    {
+      "title": "Corazón pulsante CSS",
+      "img": "https://i.imgur.com/VgSN3LE.png",
+      "alt": "Photo related to the article",
+      "description": "En este articulo podras aprender a hacer un efecto muy sencillo pero atractivo, se trata de un corazón el cual posee una animación de pulsacion. ¡Haz click para ver más!",
+      "date": "26 / 2 / 2023",
+      "tipo": "css",
+      "link": "/hearth-css"
+    },
+    {
+      "title": "Decorator",
+      "img": "https://i.imgur.com/GKPqCE2.png",
+      "alt": "Photo related to the article",
+      "description": "Nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.",
+      "date": "3 / 3 / 2023",
+      "tipo": "code",
+      "link": "/pd-decorator"
+    },
+    {
+      "title": "Proxy",
+      "img": "https://i.imgur.com/CTTfsv8.png",
+      "alt": "Photo related to the article",
+      "description": "El patrón Proxy es un patrón estructural que tiene como propósito proporcionar un subrogado o intermediario de un objeto para controlar su acceso. ¡Click para ver más!",
+      "date": "19 / 3 / 2023",
+      "tipo": "code",
+      "link": "/pd-proxy"
+    }
+  ]
+}
