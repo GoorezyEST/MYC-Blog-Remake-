@@ -9,13 +9,13 @@ export default function Footer() {
       <div className={styles.footer_first}>
         <span>Navegar</span>
         <hr className={styles.hr} />
-        <Link href="/inicio" className={styles.link}>
+        <Link href="/inicio" className={styles.link} scroll={false}>
           Inicio
         </Link>
-        <Link href="/inicio/articulos" className={styles.link}>
+        <Link href="/inicio/articulos" className={styles.link} scroll={false}>
           Artículos
         </Link>
-        <Link href="/contacto" className={styles.link}>
+        <Link href="/contacto" className={styles.link} scroll={false}>
           Contacto
         </Link>
       </div>

@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
-import Navbar from "@/components/Navbar";
+import styles from "@/styles/modules/Home.module.css";
 import LastArticle from "@/functions/lastarticle";
 import { BiChevronsDown } from "react-icons/bi";
 import { useState, useEffect } from "react";
@@ -71,24 +69,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.welcome_main}>
-        <motion.div
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 0.75,
-          }}
-        >
-          <Navbar />
-        </motion.div>
-        <motion.div
-          className={styles.welcome_section}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.75,
-            delay: 0.75,
-          }}
-        >
+        <div className={styles.welcome_section}>
           <div className={styles.welcome_text}>
             <h1 className={styles.welcome_title}>Mate y código</h1>
             <div className={styles.welcome_anim}>
@@ -108,7 +89,7 @@ export default function Home() {
             className={styles.welcome_down}
             style={{ opacity: show ? 1 : 0 }}
           />
-        </motion.div>
+        </div>
 
         <section className={styles.welcome_lastart}>
           <motion.div
@@ -136,6 +117,7 @@ export default function Home() {
             <LastArticle />
           </motion.div>
         </section>
+
         <section className={styles.faq_section}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -152,6 +134,7 @@ export default function Home() {
             {faqs.map((item, i) => {
               return (
                 <motion.div
+                  key={i}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
@@ -160,7 +143,7 @@ export default function Home() {
                     delay: 0.25,
                   }}
                 >
-                  <FAQBox faq={item} key={i} index={i} toggleFAQ={toggleFAQ} />
+                  <FAQBox faq={item} index={i} toggleFAQ={toggleFAQ} />
                 </motion.div>
               );
             })}

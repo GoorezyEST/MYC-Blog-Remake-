@@ -1,0 +1,802 @@
+{
+  "articles": [
+    [
+      { "title": "Carta 3D CSS" },
+      { "url": "carta-3d-css" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Carta 3D CSS"
+            }
+          },
+          {
+            "text": {
+              "title": "Comenzamos",
+              "text": "Bienvenidos a todos a este tutorial en el que aprenderemos a crear un efecto 3D sobre un contenedor al pasar el cursor por encima de él, en este caso utilizaremos una carta. Este efecto se consigue tan solo utilizando HTML y CSS.\nA continuación comenzaremos con la explicación. Pero antes, si quieres ver una demo de este efecto puedes hacer click debajo y verlo en mi galería CSS."
+            }
+          },
+          {
+            "link": {
+              "title": "Ver ejemplo",
+              "link": "https://goorezy-css-gallery.netlify.app/gallery/card-hover-3d"
+            }
+          },
+          {
+            "text": {
+              "title": "HTML",
+              "text": "Empecemos con el código HTML, este se basa en el contenedor principal (container) el cual cumple la función de contener dentro de él todo el contenido del efecto.\n\nPor otro lado tenemos el contenedor en el que implementaremos el efecto, el cual es un <div> que contiene dentro 9 <span>, cada uno de ellos ocupará un 33% del espacio total del contenedor, permitiendo así que dependiendo en que span se haga hover la carta genere un efecto de perspectiva 3D inclinándose hacia el lado en donde el cursor está posicionado.\n\nPor último un <div> el cual brindará los estilos que se quieran aplicar a el contenedor como también si así lo desea un contenido dentro de él, en este caso será un simple texto con el nombre del efecto."
+            }
+          },
+          {
+            "code": {
+              "language": "html",
+              "code": "<section className='container'>\n <div class='card'>\n  <div class='card-box-wrap'>\n    <span class='over'></span>\n    <span class='over'></span>\n    <span class='over'></span>\n    <span class='over'></span>\n    <span class='over'></span>\n    <span class='over'></span>\n    <span class='over'></span>\n    <span class='over'></span>\n    <span class='over'></span>\n    <div class='card-box'>\n     <strong>\n     3D Card\n     <br />\n     Hover Effect\n     </strong>\n     </div>\n  </div>\n</div>\n</section>"
+            }
+          },
+          {
+            "text": {
+              "title": "CSS Básico",
+              "text": "A continuación veremos la explicación del código CSS, iremos por parte para poder abordarlo correctamente y brindar claridad sobre la funcionalidad de cada estilo.\n\nPrimero tendremos el container, el cual permitirá un buen posicionamiento de el contenedor del efecto, además utilizaremos la clase card-box-wrap para indicar el tamaño, duracion de transición y agregar la perspectiva que brindará más calidad al efecto.\n\nPor otro lado veamos el estilo de card-box, en este fijamos la altura y ancho para que cubra todo el contendor, y le agregamos los estilos deseados que posea el anteriormente mencionado, por ejemplo el background-image para brindar un fondo con textura. No olvides aplicar el preserve-3d en este estilo."
+            }
+          },
+          {
+            "code": {
+              "language": "css",
+              "code": ".container {\n  height: 100vh;\n  background: radial-gradient(rgb(35, 35, 35), rgb(0, 0, 0));\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.card-box-wrap {\n  width: 300px;\n  height: 400px;\n  position: relative;\n  transition: all 0.6s ease-out;\n  border-radius: 1rem;\n  perspective: 1000px;\n}\n.card-box-wrap:hover {\n  transition: all 0.3s linear;\n  transform: scale(1.05);\n}\n.card-box {\n  width: 100%;\n  height: 100%;\n  background-image: url(url-here);\n  background-position: center;\n  border-radius: 1rem;\n  background-size: cover;\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  text-align: center;\n  font-size: 1.25rem;\n  font-weight: 700;\n  transition: all 0.6s ease-out;\n  transform: rotateX(0deg) rotateY(0deg);\n  perspective: 1000px;\n  transform-style: preserve-3d;\n}\n.card-box strong {\n  transform: translateZ(40px);\n  background: radial-gradient(rgb(35, 35, 35), rgb(0, 0, 0));\n  padding: 0.75rem;\n  border-radius: 1rem;\n  color: rgb(255, 255, 255);\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}"
+            }
+          },
+          {
+            "text": {
+              "title": "CSS Efecto",
+              "text": "Ahora veamos la parte más interesante, la que permite conseguir nuestro efecto que son los estilos de over.\n\nCada span, como mencionamos anteriormente ocupará un 33% del contenedor, y así cada uno ocupará una parte del contenedor de forma equitativa. Luego aprovechando nth-child, posicionamos cada uno en la posición deseada, utilizando los atributos top y left.\n\nLuego el efecto como tal a través del hover sobre cada over se logrará con un transform indicando hacia donde se debe inclinar la carta, y así consiguiendo el efecto de perspectiva en 3D.\n\nPor último te enseñaré la media query para que este efecto sea responsivo, aunque recuerda que si tu contenedor tiene dimensiones distintas, o contenido distinto, esto no te servira y deberás aplicar tus propias media queries."
+            }
+          },
+          {
+            "code": {
+              "language": "css",
+              "code": ".over {\n  width: 33.333%;\n  height: 33.333%;\n  position: absolute;\n  z-index: 1;\n}\n.over:nth-child(1) {\n  left: 0;\n  top: 0;\n}\n.over:nth-child(2) {\n  left: 33.333%;\n  top: 0;\n}\n.over:nth-child(3) {\n  left: 66.666%;\n  top: 0;\n}\n.over:nth-child(4) {\n  left: 0;\n  top: 33.333%;\n}\n.over:nth-child(5) {\n  left: 33.333%;\n  top: 33.333%;\n}\n.over:nth-child(6) {\n  left: 66.666%;\n  top: 33.333%;\n}\n.over:nth-child(7) {\n  left: 0;\n  top: 66.666%;\n}\n.over:nth-child(8) {\n  left: 33.333%;\n  top: 66.666%;\n}\n.over:nth-child(9) {\n  left: 66.666%;\n  top: 66.666%;\n}\n.over:nth-child(1):hover ~ .card-box {\n  transform: rotateX(-20deg) rotateY(20deg);\n}\n.over:nth-child(2):hover ~ .card-box {\n  transform: rotateX(-20deg) rotateY(0deg);\n}\n.over:nth-child(3):hover ~ .card-box {\n  transform: rotateX(-20deg) rotateY(-20deg);\n}\n.over:nth-child(4):hover ~ .card-box {\n  transform: rotateX(0deg) rotateY(20deg);\n}\n.over:nth-child(5):hover ~ .card-box {\n  transform: rotateX(0deg) rotateY(0deg);\n}\n.over:nth-child(6):hover ~ .card-box {\n  transform: rotateX(0deg) rotateY(-20deg);\n}\n.over:nth-child(7):hover ~ .card-box {\n  transform: rotateX(20deg) rotateY(20deg);\n}\n.over:nth-child(8):hover ~ .card-box {\n  transform: rotateX(20deg) rotateY(0deg);\n}\n.over:nth-child(9):hover ~ .card-box {\ntransform: rotateX(20deg) rotateY(-20deg);\n}\n@media screen and (max-width: 370px) {\n.card-box-wrap {\nwidth: 200px;\nheight: 300px;\n}\n.card-box strong {\npadding: 0.5rem;\nborder-radius: 1rem;\ncolor: rgb(255, 255, 255);\n}\n.card-box {\nfont-size: 1rem;\n}\n}"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En resumen, en este artículo hemos aprendido cómo crear un efecto 3D sobre un contenedor al pasar el cursor por encima de él utilizando solo HTML y CSS.\nHemos visto cómo utilizar el contenedor principal para contener todo el contenido del efecto, el uso de la perspectiva y transformaciones para lograr el efecto deseado y cómo hacer que el efecto sea responsivo utilizando Media Queries.\nEste efecto es una excelente forma de añadir interacción y dinamismo a tu sitio web y espero que este tutorial haya sido útil en tu aprendizaje."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "i18n Básico React" },
+      { "url": "i18n-basico-react" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "i18n Básico React"
+            }
+          },
+          {
+            "text": {
+              "title": "Comenzamos",
+              "text": "i18n es un acrónimo de 'Internationalization', que en español significa 'Internacionalización'.\nSe refiere a la práctica de desarrollar software de tal manera que pueda ser utilizado en diferentes idiomas y regiones del mundo sin necesidad de modificar el código fuente.\n\nEsto se logra mediante la separación del texto y los elementos de la interfaz de usuario de la lógica del programa, permitiendo que estos sean fácilmente traducidos y adaptados a diferentes idiomas.\ni18n es esencial para crear aplicaciones y sitios web que sean accesibles para una audiencia global y que puedan adaptarse a diferentes culturas y idiomas."
+            }
+          },
+          {
+            "text": {
+              "title": "Instalación",
+              "text": "Para comenzar a utilizar i18n en ReactJS lo primero que debemos hacer es instalarlo:"
+            }
+          },
+          {
+            "code": {
+              "language": "js",
+              "code": "npm install i18next react-i18next"
+            }
+          },
+          {
+            "text": {
+              "title": "Seteo de la configuración",
+              "text": "Ahora, mi recomendación, es que crees un archivo auxiliar el cual almacena la configuración de i18n para luego utilizarla en los componentes de tu aplicación que desees, en este deberemos importar las librerias e inicializar i18n con la configuración que necesitemos, en este ejemplo usaremos inglés y español."
+            }
+          },
+          {
+            "code": {
+              "language": "js",
+              "code": "import i18next from 'i18next';\nimport { initReactI18next } from 'react-i18next';\n\ni18next.use(initReactI18next).init({\n resources: {\n  en: {\n   translation: {\n    'key': 'Hello World'\n   }  \n },\n  es: {\n   translation: {\n    'key': 'Hola Mundo'\n   }\n  }\n },\n lng:'en',\n fallbackLng: 'en',\n});"
+            }
+          },
+          {
+            "text": {
+              "title": "i18n Provider",
+              "text": "Como consiguiente deberemos envolver nuestra aplicación React con el componente 'I18nextProvider' proporcionado por react-i18next:"
+            }
+          },
+          {
+            "code": {
+              "language": "js",
+              "code": "import { I18nextProvider } from 'react-i18next';\n\nconst App = () => {\n return (\n  <I18nextProvider i18n={i18next}>\n   {/* Tu aplicación aquí */}\n  </I18nextProvider>\n );\n};"
+            }
+          },
+          {
+            "text": {
+              "title": "Usar i18n",
+              "text": "¿Cómo utilizaremos i18n en nuestra aplicación?\nPues en realidad es algo sumamente sencillo deberemos, en el componente en el cual queramos utilizarlo implementar la función 't' para traducir el texto."
+            }
+          },
+          {
+            "code": {
+              "language": "js",
+              "code": "import { useTranslation } from 'react-i18next';\n\nconst MyComponent = () => {\n const { t } = useTranslation();\n return <h1>{t('key')}</h1>;\n};"
+            }
+          },
+          {
+            "text": {
+              "title": "Cambiar el idioma",
+              "text": "Otra parte importante que debes querer saber es como cambiar el idioma de nuestra aplicación, esto lo lograremos mediante la función i18next.changeLanguage('lang'), donde el parámetro 'lang' se refiere al lenguaje al que deseas cambiar tu aplicación."
+            }
+          },
+          {
+            "code": {
+              "language": "js",
+              "code": "i18next.changeLanguage('es')"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "Espero que esto te ayude a comenzar a utilizar i18n en tu aplicación de React.\nTen en cuenta que hay muchas más configuraciones por lo que te recomiendo revisar la documentación de i18next y react-i18next para obtener más información."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Etiquetas meta:og y favicons" },
+      { "url": "etiquetas-meta" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Etiquetas meta:og y favicons"
+            }
+          },
+          {
+            "text": {
+              "title": "Conceptos básicos",
+              "text": "Empezemos comprendiendo que es el SEO, y para que sirve.\n\nEl SEO (Optimización para motores de búsqueda), se trata del conjunto de estrategias y técnicas de optimización que se hacen en una página web para que aparezca orgánicamente en buscadores de Internet como Google, Yahoo o Youtube.\n\nUna de las formas para mejorar nuestro SEO es utilizando meta tags (etiquetas meta)."
+            }
+          },
+          {
+            "text": {
+              "title": "¿Qué son las meta:og tags?",
+              "text": "Las meta tags, o etiquetas, son fragmentos de código claves que aparecen en el código HTML de una web y que ayudan a los motores de búsqueda a interpretar mejor la página ofreciéndole información extra de la misma.\n\nPero como ya has visto, en este artículo hablaremos sobre las meta:og tags (etiquetas meta open graph).\n\nEstas son un protocolo que nos permite indicar a las redes sociales qué información mostrar cada vez que se comparta un enlace de nuestro sitio web.\n\nY a pesar de que no tienen tanto impacto en el seo como las principales etiquetas meta, estas serán la cara de nuestro sitio web en las redes sociales por lo que es buena idea agregarlas a nuestro HTML."
+            }
+          },
+          {
+            "text": {
+              "title": "Añadiendo nuestras meta:og tags",
+              "text": "A continuación verás un bloque de código HTML, es importante remarcar que esto irá dentro del elemento <head> de nuestro 'index.html'.\n\nAhora antes de ver el código, expliquemos cada parte:\n\n• og:title : Esta etiqueta es en la cual indicaremos el título de nuestro sitio web.\n\n• og:description : Aquí colocaremos una descripción breve y detallada de nuestro sitio web, utilizando tantas palabras clave como sea posible.\n\n• og:image : Por último, en esta etiqueta, agregaremos una imagen la cual será una 'preview' del sitio web, así como también puede ser el logo del mismo u lo que usted encuentre óptimo."
+            }
+          },
+          {
+            "code": {
+              "language": "html",
+              "code": "<meta property='og:title' content='Nombre del sitio web' />\n\n<meta property='og:description' content='Descripcion del sitio web'/>\n\n<meta property='og:image' content='URL hacia la imagen del sitio web' />"
+            }
+          },
+          {
+            "text": {
+              "title": "Generar nuestro Favicon",
+              "text": "Ahora que ya sabemos cómo implementar las etiquetas Open Graph, veamos la segunda parte de este artículo.\n\nUna forma sencilla y rápida para poder generar nuestro favicon. Primero que nada deberemos tener nuestro favicon (.png / .jpg) ya creado y diseñado a nuestro gusto, para lograr esto podemos usar múltiples programas como Figma, Photoshop, Ilustrator, entre otros. El tamaño recomendado es de 260 x 260 píxeles.\n\nUna vez que ya tengamos nuestro favicon, iremos al sitio web Real Favicon Generator, y aquí oprimimos el botón azul y seleccionaremos nuestro favicon de la ubicación donde lo hayamos guardado tras crearlo.\n\nUna vez hecho esto, verás como una gran cantidad de configuraciones se despliegan. Estas son estéticas, por lo que deberás revisar y adaptar tu favicon a gusto propio, una vez hecho nos dirigiremos al final de la página en donde encontraremos un botón el cual dice 'Generate your Favicons and HTML code'.\n\nHaremos click en él y entonces podremos descargar un WinRar con nuestro favicon (Favicon Package), y también nos brinda el código que deberemos insertar en el elemento <head> de nuestro HTML.\n\nNo olvides que el atributo 'href' deberá ser sustituido en base a la ubicación donde hayas colocado el paquete de favicon."
+            }
+          },
+          {
+            "link": {
+              "title": "Real Favicon Generator",
+              "link": "https://realfavicongenerator.net/"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo implementar etiquetas Open Graph para maximizar las interacciones con nuestro sitio web en redes sociales, también una manera sencilla y rápida de generar nuestro favicon y que este adquiera adaptabilidad a distintos navegadores."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Singleton" },
+      { "url": "pd-singleton" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Singleton"
+            }
+          },
+          {
+            "text": {
+              "title": "General",
+              "text": "Haga que la clase del objeto de instancia única sea responsable de la creación, la inicialización, el acceso y la aplicación.\nDeclare la instancia como miembro de datos estáticos privados.\nProporcione una función miembro pública estática que encapsule todo el código de inicialización y proporcione acceso a la instancia.\n\nEl cliente llama a la función de acceso (usando el nombre de clase y el operador de resolución de alcance) siempre que se requiere una referencia a la instancia única.\n\nEl patrón singleton debe usarse solo en caso de que los siguientes 3 criterios se cumplan :\n• La propiedad de la instancia única no se puede asignar razonablemente.\n• La inicialización floja (lazy initialization) es deseable.\n• El acceso global no está previsto de otro modo.\n\nEl patrón Singleton se puede ampliar para admitir el acceso a un número de instancias específico de la aplicación."
+            }
+          },
+          {
+            "text": {
+              "title": "Estructura",
+              "text": "Haga que la clase de la instancia única sea responsable del acceso y la 'inicialización en el primer uso'.\nLa instancia única es un atributo estático privado. La función de acceso es un método estático público."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/AfYkhke.png",
+              "alt": "Singletone Structure Example"
+            }
+          },
+          {
+            "text": {
+              "title": "Ejemplo",
+              "text": "El patrón Singleton asegura que una clase tenga solo una instancia y proporciona un punto de acceso global a esa instancia.\nLleva el nombre del conjunto singleton, que se define como un conjunto que contiene un elemento.\nLa oficina del presidente de los Estados Unidos es un Singleton.\nLa Constitución de los Estados Unidos especifica los medios por los cuales se elige a un presidente, limita la duración del cargo y define el orden de sucesión.\nComo resultado, puede haber como máximo un presidente activo en un momento dado.\nIndependientemente de la identidad personal del presidente activó, el título 'El presidente de los Estados Unidos' es un punto de acceso global que identifica a la persona en el cargo."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/qMC1Q72.png",
+              "alt": "Singletone Image Example"
+            }
+          },
+          {
+            "text": {
+              "title": "Reconocer uso",
+              "text": "La aplicación necesita una, y solo una, instancia de un objeto.\nAdicionalmente, la inicialización diferida (lazy initialization) y el acceso global son necesarios."
+            }
+          },
+          {
+            "link": {
+              "title": "Ejemplo en GitHub",
+              "link": "https://github.com/GoorezyEST/PD_Singletone/blob/main/Program.cs"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo y cuándo usar el patrón de diseño Singleton.\nDesde una descripción general del mismo, hasta un ejemplo en un repositorio de GitHub.\nEspero que te haya gustado este artículo, ten en cuenta que si quieres información más detallada sobre los patrones de diseño puedes leer el libro 'Design Patterns' de 'The gang of Four'."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Factory" },
+      { "url": "pd-factory" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Factory"
+            }
+          },
+          {
+            "text": {
+              "title": "General",
+              "text": "El patrón factory es para crear objetos e implementar un algoritmo.\nUna superclase especifica todo el comportamiento estándar y genérico, y luego delega los detalles de creación a las subclases que proporciona el cliente.\n\nFactory hace que un diseño sea más personalizable y solo un poco más complicado.\nOtros patrones de diseño requieren nuevas clases, mientras que factory solo requiere una nueva operación.\n\nLa gente a menudo usa factory como la forma estándar de crear objetos; pero no es necesario si: la clase de la que se crea una instancia nunca cambia, o la instancia se lleva a cabo en una operación que las subclases pueden anular fácilmente."
+            }
+          },
+          {
+            "text": {
+              "title": "Estructura",
+              "text": "Una definición cada vez más popular de método de factory es:\nUn método estático de una clase que devuelve un objeto del tipo de esa clase.\nPero a diferencia de un constructor, el objeto real que devuelve podría ser una instancia de una subclase.\nA diferencia de un constructor, se puede reutilizar un objeto existente, en lugar de crear un nuevo objeto.\nA diferencia de un constructor, los métodos de factory pueden tener nombres diferentes y más descriptivos.\nEl cliente está totalmente desvinculado de los detalles de implementación de las clases derivadas.\nLa creación polimórfica ahora es posible."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/7tSd1Ln.png",
+              "alt": "Factory Image Example"
+            }
+          },
+          {
+            "text": {
+              "title": "Ejemplo",
+              "text": "Factory define una interfaz para crear objetos, pero permite que las subclases decidan qué clases instanciar.\nLas prensas de moldeo por inyección muestran este patrón.\nLos fabricantes de juguetes de plástico procesan polvo de moldeo de plástico e inyecta el plástico en moldes de las formas deseadas.\nLa clase de juguete (automóvil, figura de acción, etc.) está determinada por el molde."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/TIcvPjQ.png",
+              "alt": "Factory Image Example"
+            }
+          },
+          {
+            "text": {
+              "title": "Reconocer uso",
+              "text": "Un framework debe estandarizar la arquitectura de modelo para una variedad de aplicaciones, pero permitir a las aplicaciones individuales definir sus propios objetos y prever su instanciación."
+            }
+          },
+          {
+            "link": {
+              "title": "Ejemplo en GitHub",
+              "link": "https://github.com/GoorezyEST/PD_Factory"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo y cuándo usar el patrón de diseño Factory.\nDesde una descripción general del mismo, hasta un ejemplo en un repositorio de GitHub.\nEspero que te haya gustado este artículo, ten en cuenta que si quieres información más detallada sobre los patrones de diseño puedes leer el libro 'Design Patterns' de 'The gang of Four'."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Abstract Factory" },
+      { "url": "pd-abstract-factory" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Abstract Factory"
+            }
+          },
+          {
+            "text": {
+              "title": "General",
+              "text": "Proporcione un nivel de indirección que abstraiga la creación de familias de objetos relacionados o dependientes sin especificar directamente sus clases concretas.\n\nEl objeto 'fábrica' tiene la responsabilidad de proporcionar servicios de creación para toda la familia de plataformas. Los clientes nunca crean objetos de plataforma directamente, le piden a la fábrica que lo haga por ellos.\n\nEste mecanismo facilita el intercambio de familias de productos porque la clase específica del objeto de fábrica aparece solo una vez en la aplicación, donde se instancia.\nLa aplicación puede reemplazar al por mayor toda la familia de productos simplemente instanciando una instancia concreta diferente de la fábrica abstracta.\n\nDebido a que el servicio proporcionado por el objeto de fábrica es tan generalizado, se implementa de manera rutinaria como Singleton."
+            }
+          },
+          {
+            "text": {
+              "title": "Estructura",
+              "text": "Abstract factory define un método de fábrica por producto. Cada método fábrica encapsula el nuevo operador y las clases de productos concretas y específicas de la plataforma.\nLuego, cada 'plataforma' se modela con una clase derivada de fábrica."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/pkNM43W.png",
+              "alt": "Abstract Factory Image Example"
+            }
+          },
+          {
+            "text": {
+              "title": "Ejemplo",
+              "text": "El propósito de Abstract Factory es proporcionar una interfaz para crear familias de objetos relacionados, sin especificar clases concretas.\nUn ejemplo podemos verlo en el equipo de estampado de láminas de metal utilizado en la fabricación de automóviles japoneses. El equipo de estampado es una Fábrica Abstracta que crea piezas de carrocería.\nLa misma maquinaria se utiliza para estampar puertas derechas, izquierdas, guardabarros delantero derecho, guardabarros delantero izquierdo, capotas, etc. para diferentes modelos de automóviles.\nMediante el uso de rodillos para cambiar los troqueles de estampado, las clases de hormigón producidas por la maquinaria se pueden cambiar en tres minutos."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/4Bhp0fm.png",
+              "alt": "Factory Image Example"
+            }
+          },
+          {
+            "text": {
+              "title": "Reconocer uso",
+              "text": "Si una aplicación va a ser portátil, debe encapsular las dependencias de la plataforma. Estas 'plataformas' pueden incluir: sistema de ventanas, sistema operativo, base de datos, etc.\nCon demasiada frecuencia, esta encapsulación no está diseñada de antemano y muchas declaraciones de casos #ifdef con opciones para todas las plataformas admitidas actualmente comienzan a procrear como conejos a lo largo del código."
+            }
+          },
+          {
+            "link": {
+              "title": "Ejemplo GitHub",
+              "link": "https://github.com/GoorezyEST/PD_AbstractFactory"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo y cuándo usar el patrón de diseño Abstract Factory.\nDesde una descripción general del mismo, hasta un ejemplo en un repositorio de GitHub.\nEspero que te haya gustado este artículo, ten en cuenta que si quieres información más detallada sobre los patrones de diseño puedes leer el libro 'Design Patterns' de 'The gang of Four'."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Prototype" },
+      { "url": "pd-prototype" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Prototype"
+            }
+          },
+          {
+            "text": {
+              "title": "General",
+              "text": "Declare una clase base abstracta que especifique un método de 'clon'.\nEntonces, el cliente, en lugar de escribir código que invoque el operador 'new' en un nombre de clase fijo, llama a una operación de 'clon' en la clase base abstracta, proporcionando una cadena o tipo de datos enumerados que designa la clase derivada concreta deseada."
+            }
+          },
+          {
+            "text": {
+              "title": "Estructura",
+              "text": "La fábrica sabe como encontrar el prototipo correcto, y cada producto sabe como generar nuevas instancias de sí mismo."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/K9vfYvh.png",
+              "alt": "Photo related to the structure of the Prototype"
+            }
+          },
+          {
+            "text": {
+              "title": "Ejemplo",
+              "text": "El patrón prototipo especifica el tipo de objetos a crear usando una instancia prototípica.\n\nLos prototipos de nuevos productos son menos construidos antes de estar en producción, pero en este ejemplo el prototipo es pasivo y no participa en la copia de sí mismo.\n\nLa mitosis de las células - resultando en dos células idénticas - es un ejemplo de un prototipo que cumple un rol activo en copiarse a sí mismo. Este es un ejemplo del patrón prototipo."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/KNwxRJT.png",
+              "alt": "Photo related to the example of the Prototype"
+            }
+          },
+          {
+            "text": {
+              "title": "Reconocer uso",
+              "text": "Utiliza el patrón Prototype cuando tu código no deba depender de las clases concretas de objetos que necesites copiar. Esto sucede a menudo cuando tu código funciona con objetos pasados por código de terceras personas a través de una interfaz."
+            }
+          },
+          {
+            "link": {
+              "title": "Ejemplo en GitHub",
+              "link": "https://github.com/GoorezyEST/PD_Prototype/blob/main/Program.cs"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo y cuándo usar el patrón de diseño Prototype.\nDesde una descripción general del mismo, hasta un ejemplo en un repositorio de GitHub.\nEspero que te haya gustado este artículo, ten en cuenta que si quieres información más detallada sobre los patrones de diseño puedes leer el libro 'Design Patterns' de 'The gang of Four'."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Facade" },
+      { "url": "pd-facade" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Facade"
+            }
+          },
+          {
+            "text": {
+              "title": "General",
+              "text": "El patrón facade analiza la encapsulación de un subsistema complejo dentro de un solo objeto de interfaz.\nEsto reduce la curva de aprendizaje necesaria para aprovechar con éxito el subsistema.\nTambién promueve el desacoplamiento del subsistema de sus muchos clientes potenciales.\nPor otro lado, si la fachada es el único punto de acceso para el subsistema, limitará las funciones y la flexibilidad que pueden necesitar los 'usuarios avanzados'.\n\nEl objeto facade debe ser un facilitador bastante simple. No debe convertirse en un oráculo que todo lo sabe o en un objeto 'dios'."
+            }
+          },
+          {
+            "text": {
+              "title": "Estructura",
+              "text": "La fachada toma un “acertijo envuelto en un enigma rodeado de misterio”, e intercala un envoltorio que doma la masa amorfa e inescrutable de software.\nVeamos un ejemplo en el que: el “subsystemOne” y “subsystemThree” no interactúan con los componentes internos del “subsystemTwo”."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/7n5gHkd.png",
+              "alt": "Photo related to the structure of the Prototype"
+            }
+          },
+          {
+            "text": {
+              "title": "Ejemplo",
+              "text": "La fachada define una interfaz unificada de nivel superior para un subsistema que facilita su uso.\nLos consumidores se encuentran con facade cuando ordenan de un catálogo.\nEl consumidor llama a un número y habla con un representante de servicio al cliente.\nEl representante de servicio al cliente actúa como una fachada, proporcionando una interfaz para el departamento de cumplimiento de pedidos, el departamento de facturación y el departamento de envío."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/YPZApZc.png",
+              "alt": "Photo related to the example of the Prototype"
+            }
+          },
+          {
+            "text": {
+              "title": "Reconocer uso",
+              "text": "Un segmento de la comunidad de clientes necesita una interfaz simplificada para la funcionalidad general de un subsistema complejo."
+            }
+          },
+          {
+            "link": {
+              "title": "Ejemplo en GitHub",
+              "link": "https://github.com/GoorezyEST/PD_Facade"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo y cuándo usar el patrón de diseño Facade.\nDesde una descripción general del mismo, hasta un ejemplo en un repositorio de GitHub.\nEspero que te haya gustado este artículo, ten en cuenta que si quieres información más detallada sobre los patrones de diseño puedes leer el libro 'Design Patterns' de 'The gang of Four'."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Corazón palpitante CSS" },
+      { "url": "corazon-css" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Corazón palpitante CSS"
+            }
+          },
+          {
+            "text": {
+              "title": "HTML del corazón",
+              "text": "Esta animación se logra de una forma extremadamente sencilla, lo único que necesitaremos en HTML será una etiqueta div ¿Solo eso? Así es, con tan solo un div aprovechando sus pseudo-elementos after y before lograremos el efecto deseado."
+            }
+          },
+          {
+            "code": {
+              "language": "html",
+              "code": "<div className=\"hearth\"> </div>"
+            }
+          },
+          {
+            "text": {
+              "title": "CSS Básico",
+              "text": "Veamos la primera parte de CSS para nuestro corazón, en esta manipularemos nuestro div para darle los estilos que necesitamos para que se consiga el efecto esperado.\n\nLo que haremos será especificar su tamaño y color, así como también le daremos cierta luz de fondo para lograr un mejor efecto de profundidad a la hora de que el corazón use la animación de palpitar."
+            }
+          },
+          {
+            "code": {
+              "language": "css",
+              "code": ".hearth {\n\theight: 80px;\n\twidth: 80px;\n\tbackground-color: rgb(221, 39, 124);\n\tposition: relative;\n\ttransform: rotate(45deg);\n\tbox-shadow: -10px 10px 90px rgb(221, 39, 124);\n\tanimation: hearthAnim 1.05s linear infinite;\n}"
+            }
+          },
+          {
+            "text": {
+              "title": "CSS Pseudo-elementos",
+              "text": "Ahora toca darle forma a nuestro corazón, esto lo haremos utilizando los pseudoelementos before y after de nuestro div.\nA estos le asignaremos el mismo color y tamaño que tiene nuestro div, y aprovechando una posición absoluta y posicionamiento podremos colocarlo en las zonas que necesitamos, por último, con un border radius nuestro corazón estará terminado.\nPero aún falta la animación para que esté completo."
+            }
+          },
+          {
+            "code": {
+              "language": "css",
+              "code": ".hearth::before {\n\tcontent: \"\";\n\tposition: absolute;\n\theight: 80px;\n\twidth: 80px;\n\tbackground-color: rgb(221, 39, 124);\n\ttop: -40px;\n\tborder-radius: 50px;\n\tbox-shadow: -10px 10px 90px rgb(221, 39, 124);\n}\n\n.hearth::after {\n\tcontent: \"\";\n\tposition: absolute;\n\theight: 80px;\n\twidth: 80px;\n\tbackground-color: rgb(221, 39, 124);\n\tright: -40px;\n\tborder-radius: 50px;\n\tbox-shadow: -10px 10px 90px rgb(221, 39, 124);\n}"
+            }
+          },
+          {
+            "text": {
+              "title": "CSS Animación",
+              "text": "Por último veamos la animación para que nuestro efecto este completo, esta se basa en un simple transform que da la impresión de que nuestro corazón está \"palpitando\"."
+            }
+          },
+          {
+            "code": {
+              "language": "css",
+              "code": "@keyframes hearthAnim {\n\t0% {\n\t\ttransform: rotate(-45deg) scale(1.075);\n\t}\n\t70% {\n\t\ttransform: rotate(-45deg) scale(1);\n\t}\n\t100% {\n\t\ttransform: rotate(-45deg) scale(1.075);\n\t}\n}"
+            }
+          },
+          {
+            "text": {
+              "title": "CSS Completo",
+              "text": "Ahora veamos todo el archivo CSS que implementamos en caso de querer conseguir este efecto, así como también debajo tendrás un botón con el cual podrás ver un ejemplo de cómo este efecto se ve, para así decidir si hacerlo o no."
+            }
+          },
+          {
+            "code": {
+              "language": "css",
+              "code": ".hearth {\n\theight: 80px;\n\twidth: 80px;\n\tbackground-color: rgb(221, 39, 124);\n\tposition: relative;\n\ttransform: rotate(45deg);\n\tbox-shadow: -10px 10px 90px rgb(221, 39, 124);\n\tanimation: hearthAnim 1.05s linear infinite;\n}\n\n.hearth::before {\n\tcontent: \"\";\n\tposition: absolute;\n\theight: 80px;\n\twidth: 80px;\n\tbackground-color: rgb(221, 39, 124);\n\ttop: -40px;\n\tborder-radius: 50px;\n\tbox-shadow: -10px 10px 90px rgb(221, 39, 124);\n}\n\n.hearth::after {\n\tcontent: \"\";\n\tposition: absolute;\n\theight: 80px;\n\twidth: 80px;\n\tbackground-color: rgb(221, 39, 124);\n\tright: -40px;\n\tborder-radius: 50px;\n\tbox-shadow: -10px 10px 90px rgb(221, 39, 124);\n}\n\n@keyframes hearthAnim {\n\t0% {\n\t\ttransform: rotate(-45deg) scale(1.075);\n\t}\n\t70% {\n\t\ttransform: rotate(-45deg) scale(1);\n\t}\n\t100% {\n\t\ttransform: rotate(-45deg) scale(1.075);\n\t}\n}"
+            }
+          },
+          {
+            "link": {
+              "title": "Ver efecto",
+              "link": "https://goorezy-css-gallery.netlify.app/gallery/hearth-pulse"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En conclusión en este artículo aprendimos a crear un simple efecto con animación en CSS, en el cual aprovechamos los pseudo-elementos para lograr la forma de un corazón el cual luego simulamos que palpita con una animación que utiliza el atributo transform para brindar el efecto. Espero que este artículo le haya servido, y pueda implementar este efecto en su propio contexto."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Decorator" },
+      { "url": "pd-decorator" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Decorator"
+            }
+          },
+          {
+            "text": {
+              "title": "General",
+              "text": "El patrón Decorator responde a la necesidad de añadir dinámicamente funcionalidad a un objeto. Esto nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.\n\nEl decorador adjunta dinámicamente responsabilidades adicionales a un objeto. Los adornos que se añaden a los pinos o abetos son ejemplos de decoradores. Se pueden agregar luces, guirnaldas, bastones de caramelo, adornos de vidrio, etc., a un árbol para darle un aspecto festivo. Los adornos no cambian el árbol en sí mismo, que es reconocible como un árbol de Navidad, independientemente de los adornos particulares que se utilicen. Como ejemplo de funcionalidad adicional, la adición de luces permite \"encender\" un árbol de Navidad."
+            }
+          },
+          {
+            "text": {
+              "title": "Estructura",
+              "text": "El cliente siempre está interesado en coreFunction.doThis().\nEl cliente puede, o no, estar interesado en optional.doThis() y optional.doThisOther().\nCada una de estas clases siempre delega al decorador base, y esta clase siempre delega al objeto “wrapper”."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/CvvmZcr.png",
+              "alt": "Decorator image structure"
+            }
+          },
+          {
+            "text": {
+              "title": "Ejemplo",
+              "text": "Un arma de asalto es un arma letal por sí misma. Pero puedes aplicarle ciertos “decoradores” para hacerla más precisa, silenciosa y devastadora."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/wulm7pf.png",
+              "alt": "Decorator image example"
+            }
+          },
+          {
+            "text": {
+              "title": "Reconocer uso",
+              "text": "Quieres agregar comportamientos o estados a objetos individuales en tiempo de ejecucion.\nLa herencia no es factible porque es estatica y se aplica a una clase entera."
+            }
+          },
+          {
+            "link": {
+              "title": "Ejemplo en GitHub",
+              "link": "https://github.com/GoorezyEST/PD_Decorator"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo y cuándo usar el patrón de diseño Decorator.\nDesde una descripción general del mismo, hasta un ejemplo en un repositorio de GitHub. Espero que te haya gustado este artículo, ten en cuenta que si quieres información más detallada sobre los patrones de diseño puedes leer el libro 'Design Patterns' de 'The gang of Four'."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Proxy" },
+      { "url": "pd-proxy" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Proxy"
+            }
+          },
+          {
+            "text": {
+              "title": "General",
+              "text": "Diseñe un objeto sustituto, o proxy, que: Instancia el objeto real la primera vez que el cliente realiza una solicitud del proxy, recuerda la identidad de este objeto real y reenvía la solicitud instigadora a este objeto real. Luego, todas las solicitudes posteriores simplemente se reenvían directamente al objeto real encapsulado."
+            }
+          },
+          {
+            "text": {
+              "title": "Estructura",
+              "text": "Veamos un ejemplo de su estructura, al definir una interfaz Subject, la presencia del objeto Proxy estando en el lugar de RealSubject es transparente para el cliente."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/4prQ7Y9.png",
+              "alt": "Proxy image structure"
+            }
+          },
+          {
+            "text": {
+              "title": "Ejemplo",
+              "text": "El Proxy provee un sustituto que provee acceso a un objeto.\nUn cheque es un Proxy para fondos en una cuenta. Un cheque puede ser utilizado en lugar de dinero para hacer compras y también controlar el acceso al dinero en la cuenta del propietario."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/dxrkgKn.png",
+              "alt": "Proxy image example"
+            }
+          },
+          {
+            "text": {
+              "title": "Reconocer uso",
+              "text": "La causa más común en la que utilizaremos este patrón será cuando se necesita admitir objetos que consumen muchos recursos y no desea crear instancias de dichos objetos a menos y hasta que el cliente realmente los solicite."
+            }
+          },
+          {
+            "link": {
+              "title": "Ejemplo en GitHub",
+              "link": "https://github.com/GoorezyEST/PD_Proxy"
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En este artículo aprendimos cómo y cuándo usar el patrón de diseño Proxy.\nDesde una descripción general del mismo, hasta un ejemplo en un repositorio de GitHub. Espero que te haya gustado este artículo, ten en cuenta que si quieres información más detallada sobre los patrones de diseño puedes leer el libro 'Design Patterns' de 'The gang of Four'."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      { "title": "Angular vs React: ¿Cuándo y porqué?" },
+      { "url": "angular-vs-react" },
+      {
+        "content": [
+          {
+            "title": {
+              "title": "Angular vs React: ¿Cuándo y porqué?"
+            }
+          },
+          {
+            "text": {
+              "title": "Introducción",
+              "text": "Si eres un desarrollador FrontEnd, de seguro ya has oído sobre Angular y React.\nEstos dos frameworks de Javascript son muy populares, y se utilizan para construir aplicaciones web.\n\nPosiblemente te ha pasado que antes de comenzar un proyecto no estas seguro si es más conveniente usar Angular o React para crearlo, pues aquí resumimos de forma sencilla cuando y porqué utilizar cada uno de ellos para que ya no tengas dudas a la hora de decidir si utilizas Angular o React en tu proyecto."
+            }
+          },
+          {
+            "text": {
+              "title": "Angular: Pros y contras",
+              "text": "Angular es un framework de código abierto mantenido por Google, este sirve para desarrollar aplicaciones web de estilo Single Page Application (SPA) y Progressive Web App (PWA).\nAngular es un framework Javascript, pero se usa Typescript para la programación. Typescript es una extensión de Javascript, que agrega características como el tipo de datos o los decoradores."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/QsvNw8h.png",
+              "alt": "Angular image"
+            }
+          },
+          {
+            "text": {
+              "title": "Pros:",
+              "text": "• Ofrece una amplia cantidad de características y herramientas para la construcción de aplicaciones web.\n• Utiliza Typescript, este ayuda a detectar errores en tiempo de compilación y hace que el código sea más seguro y fácil de mantener.\n• Una gran comunidad de desarrolladores y buena documentación."
+            }
+          },
+          {
+            "text": {
+              "title": "Contras:",
+              "text": "• Su complejidad hace que la curva de aprendizaje sea más empinada que otros frameworks como React.\n• Puede ser más lento que otros frameworks, especialmente en aplicaciones con una gran cantidad de datos y elementos en la interfaz de usuario."
+            }
+          },
+          {
+            "text": {
+              "title": "React: Pros y contras:",
+              "text": "React es una biblioteca Javascript de código abierto diseñada con el objetivo de crear interfaces de usuario para así, facilitar el desarrollo de aplicaciones Single Page Application.\nEs mantenido por Facebook y la comunidad de software libre.\nReact te ayuda a crear interfaces de usuario interactivas de forma sencilla. Diseña vistas simples para cada estado en tu aplicación, y React se encargará de actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien."
+            }
+          },
+          {
+            "img": {
+              "src": "https://i.imgur.com/kAcGKER.png",
+              "alt": "React image"
+            }
+          },
+          {
+            "text": {
+              "title": "Pros:",
+              "text": "• Es un framework flexible que permite construir una amplia variedad de aplicaciones web, desde sitios estáticos hasta aplicaciones complejas y escalables.\n• Es rápido y eficiente en lo que es el manejo de grandes cantidades de datos y elementos de la interfaz de usuario.\n• Una gran comunidad de desarrolladores y buena documentación."
+            }
+          },
+          {
+            "text": {
+              "title": "Contras:",
+              "text": "• Es un framework más básico, lo que obliga al desarrollador a tener que utilizar herramientas y librerías externas para así lograr tener una pila de tecnología completa.\n• Utiliza Javascript puro, lo que puede generar que el código sea más propenso a errores y más difícil de mantener."
+            }
+          },
+          {
+            "text": {
+              "title": "¿Cuándo usar Angular o React? ¿Y por qué?",
+              "text": "Como hemos podido observar a lo largo de este artículo, tanto Angular como React cuentan con cosas buenas y malas. Y la elección de cual usar depende de tus necesidades y preferencias personales.\n\nSi prefieres una experiencia de desarrollo completa y robusta, Angular es probablemente la mejor opción para ti. Por otro lado, si valoras la flexibilidad y la velocidad, React podría ser una mejor elección."
+            }
+          },
+          {
+            "text": {
+              "title": "Conclusión",
+              "text": "En resumen, ambos frameworks son excelentes opciones para la construcción de aplicaciones web.\nTanto Angular como React tienen comunidades de desarrolladores activas, documentación excelente y son eficientes a la hora de desarrollar una aplicación web."
+            }
+          }
+        ]
+      }
+    ]
+  ]
+}

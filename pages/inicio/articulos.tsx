@@ -1,6 +1,9 @@
 import React from "react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
+import thumbnails from "@/data/thumbnails.json";
+import RenderThumbnails from "@/functions/renderThumbnails";
+import Footer from "@/components/Footer";
 
 export default function articulos() {
   return (
@@ -12,9 +15,9 @@ export default function articulos() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navbar />
-        <p>Example text ...</p>
+        <RenderThumbnails data={thumbnails} />
       </main>
+      <Footer />
     </>
   );
 }

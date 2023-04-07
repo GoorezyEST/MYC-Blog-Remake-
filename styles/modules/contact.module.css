@@ -1,0 +1,82 @@
+.content {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.title {
+  font-size: 32px;
+  color: rgb(0, 179, 19);
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn {
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnLinkedin:hover {
+  background-color: #0e76a8;
+}
+
+.btnGithub:hover {
+  background-color: #171515;
+}
+
+.btnMail:hover {
+  background-color: #c71610;
+}
+
+.btn:hover .icon {
+  color: #eeeeee;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+}
+
+.btn:active {
+  transform: scale(0.95) translateY(0);
+}
+
+.icon {
+  color: black;
+  font-size: 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.email p {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(40, 40, 40);
+}
+
+.email span {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(0, 179, 19);
+}

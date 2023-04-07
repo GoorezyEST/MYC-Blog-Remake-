@@ -2,13 +2,18 @@ import React from "react";
 import data from "@/data/thumbnails.json";
 import Image from "next/image";
 import styles from "@/styles/modules/lastarticle.module.css";
+import Link from "next/link";
 
 export default function LastArticle() {
   const lastThumbnail = data.articles[data.articles.length - 1];
 
   return (
     <>
-      <div className={styles.card}>
+      <Link
+        className={styles.card}
+        href={"inicio/" + lastThumbnail.link}
+        scroll={false}
+      >
         {lastThumbnail && (
           <>
             <Image
@@ -26,7 +31,7 @@ export default function LastArticle() {
             </div>
           </>
         )}
-      </div>
+      </Link>
     </>
   );
 }

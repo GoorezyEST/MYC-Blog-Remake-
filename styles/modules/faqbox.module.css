@@ -17,7 +17,7 @@
   cursor: pointer;
   transition: all 0.45s ease-in-out;
   user-select: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 .faq_question::after {
@@ -47,7 +47,7 @@
   transition: all 0.45s ease-in-out;
   cursor: pointer;
   user-select: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 .open .faq_question {

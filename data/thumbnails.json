@@ -2,102 +2,99 @@
   "articles": [
     {
       "title": "Carta 3D CSS",
-      "img": "https://i.imgur.com/IVkHAER.png",
+      "img": "https://i.imgur.com/txQzjog.png",
       "alt": "Photo related to the article",
       "description": "Descubre cómo dar vida a tus proyectos con solo HTML y CSS al crear un impresionante efecto 3D al pasar el cursor sobre una carta. ¡Haz clic aquí para aprender más y darle un toque especial a tus diseños!",
       "date": "15 / 1 / 2023",
-      "tipo": "css",
-      "link": "/3d-css-carta"
+      "link": "articulos/carta-3d-css"
     },
     {
       "title": "i18n Básico React",
-      "img": "https://i.imgur.com/X9Wfi0K.png",
+      "img": "https://i.imgur.com/HLMBdrv.png",
       "alt": "Photo related to the article",
-      "description": "Aprende a utilizar i18n en tus aplicacion de React para que estas obtengan un mayor alcance teniendo la propiedad de poseer multiples lenguages. ¡Haz click aqui y aprende como!",
+      "description": "Aprende a utilizar i18n en tus aplicación de React para que estas obtengan un mayor alcance teniendo la propiedad de poseer múltiples lenguajes. ¡Haz click aquí y aprende como!",
       "date": "16 / 1 / 2023",
-      "tipo": "code",
-      "link": "/i18n-react"
+      "link": "articulos/i18n-basico-react"
     },
     {
       "title": "Etiquetas meta y favicons",
-      "img": "https://i.imgur.com/dewhXet.png",
+      "img": "https://i.imgur.com/VpQdObN.png",
       "alt": "Photo related to the article",
-      "description": "Etiquetas meta basicas para incrementar el SEO de tu sitio web. Y una forma sencilla de como generar tus favicons facil y rapido. ¡Haz click aqui para ver más!",
+      "description": "Etiquetas meta básicas para incrementar el SEO de tu sitio web. Y una forma sencilla de como generar tus favicons facil y rapido. ¡Haz click aquí para ver más!",
       "date": "31 / 1 / 2023",
-      "tipo": "code",
-      "link": "/meta-tag-favs"
+      "link": "articulos/etiquetas-meta"
     },
     {
       "title": "Singleton",
-      "img": "https://i.imgur.com/wk8YZKU.png",
+      "img": "https://i.imgur.com/x1BDrEz.png",
       "alt": "Photo related to the article",
       "description": "Un patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto. ¡Aprende singleton!",
       "date": "09 / 2 / 2023",
-      "tipo": "code",
-      "link": "/pd-singleton"
+      "link": "articulos/pd-singleton"
     },
     {
       "title": "Factory",
-      "img": "https://i.imgur.com/NqY6SIe.png",
+      "img": "https://i.imgur.com/mnma9M5.png",
       "alt": "Photo related to the article",
-      "description": "El patron factory consiste en utilizar una clase constructora abstracta con unos cuantos métodos definidos y otro abstracto. ¡Click aqui para ver!",
+      "description": "El patrón factory consiste en utilizar una clase constructora abstracta con unos cuantos métodos definidos y otro abstracto. ¡Click aquí para ver!",
       "date": "10 / 2 / 2023",
-      "tipo": "code",
-      "link": "/pd-factory"
+      "link": "articulos/pd-factory"
     },
     {
       "title": "Abstract factory",
-      "img": "https://i.imgur.com/8uDHU1i.png",
+      "img": "https://i.imgur.com/F5ffBQF.png",
       "alt": "Photo related to the article",
-      "description": "Abstract Factory es un patrón de diseño creacional que resuelve el problema de crear familias enteras de productos sin especificar sus clases concretas. ¡Ver aqui!",
+      "description": "Abstract Factory es un patrón de diseño creacional que resuelve el problema de crear familias enteras de productos sin especificar sus clases concretas. ¡Ver aquí!",
       "date": "13 / 2 / 2023",
-      "tipo": "code",
-      "link": "/pd-abstract-factory"
+      "link": "articulos/pd-abstract-factory"
     },
     {
       "title": "Prototype",
-      "img": "https://i.imgur.com/TwQftzR.png",
+      "img": "https://i.imgur.com/vfqqXfr.png",
       "alt": "Photo related to the article",
-      "description": "El patrón de diseño prototipo tiene como finalidad crear nuevos objetos clonando una instancia creada previamente. Para aprenderlo haz click aqui",
+      "description": "El patrón de diseño prototipo tiene como finalidad crear nuevos objetos clonando una instancia creada previamente. Para aprenderlo haz click aquí.",
       "date": "15 / 2 / 2023",
-      "tipo": "code",
-      "link": "/pd-prototype"
+      "link": "articulos/pd-prototype"
     },
     {
       "title": "Facade",
-      "img": "https://i.imgur.com/YkB10vp.png",
+      "img": "https://i.imgur.com/GmDH1Xz.png",
       "alt": "Photo related to the article",
-      "description": "El patrón de diseño facade esta motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.",
+      "description": "El patrón de diseño facade está motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.",
       "date": "17 / 2 / 2023",
-      "tipo": "code",
-      "link": "/pd-facade"
+      "link": "articulos/pd-facade"
     },
     {
       "title": "Corazón pulsante CSS",
-      "img": "https://i.imgur.com/VgSN3LE.png",
+      "img": "https://i.imgur.com/3bZdWyx.png",
       "alt": "Photo related to the article",
-      "description": "En este articulo podras aprender a hacer un efecto muy sencillo pero atractivo, se trata de un corazón el cual posee una animación de pulsacion. ¡Haz click para ver más!",
+      "description": "En este artículo podrás aprender a hacer un efecto muy sencillo pero atractivo, se trata de un corazón el cual posee una animación de pulsación. ¡Haz click para ver más!",
       "date": "26 / 2 / 2023",
-      "tipo": "css",
-      "link": "/hearth-css"
+      "link": "articulos/corazon-css"
     },
     {
       "title": "Decorator",
-      "img": "https://i.imgur.com/GKPqCE2.png",
+      "img": "https://i.imgur.com/WFV99Ml.png",
       "alt": "Photo related to the article",
       "description": "Nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.",
       "date": "3 / 3 / 2023",
-      "tipo": "code",
-      "link": "/pd-decorator"
+      "link": "articulos/pd-decorator"
     },
     {
       "title": "Proxy",
-      "img": "https://i.imgur.com/CTTfsv8.png",
+      "img": "https://i.imgur.com/POtV7XZ.png",
       "alt": "Photo related to the article",
       "description": "El patrón Proxy es un patrón estructural que tiene como propósito proporcionar un subrogado o intermediario de un objeto para controlar su acceso. ¡Click para ver más!",
       "date": "19 / 3 / 2023",
-      "tipo": "code",
-      "link": "/pd-proxy"
+      "link": "articulos/pd-proxy"
+    },
+    {
+      "title": "Angular vs React",
+      "img": "https://i.imgur.com/7pB4AMD.png",
+      "alt": "Photo related to the article",
+      "description": "Si eres un desarrollador FrontEnd, de seguro ya has oído sobre Angular y React, pero, ¿sabes sus diferencias, pros y contras? En este artículo te lo explicaremos.",
+      "date": "7 / 4 / 2023",
+      "link": "articulos/angular-vs-react"
     }
   ]
 }
