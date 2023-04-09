@@ -71,19 +71,35 @@ export default function Home() {
       <main className={styles.welcome_main}>
         <div className={styles.welcome_section}>
           <div className={styles.welcome_text}>
-            <h1 className={styles.welcome_title}>Mate y código</h1>
-            <div className={styles.welcome_anim}>
-              <p className={styles.welcome_slogan}>Un lugar donde puedes</p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              <h1 className={styles.welcome_title}>Mate y código</h1>
+            </motion.div>
+            <motion.div
+              className={styles.welcome_anim}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.75, duration: 0.5 }}
+            >
+              <p className={styles.welcome_slogan}>Un lugar para</p>
               <div className={styles.multi_content}>
-                <div className={styles.multi_words}>
+                <motion.div
+                  className={styles.multi_words}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                >
                   <span className={styles.wordAnim}>Aprender</span>
                   <span className={styles.wordAnim}>Descubrir</span>
                   <span className={styles.wordAnim}>Informarte</span>
                   <span className={styles.wordAnim}>Investigar</span>
                   <span className={styles.wordAnim}>Aprender</span>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <BiChevronsDown
             className={styles.welcome_down}
@@ -93,8 +109,8 @@ export default function Home() {
 
         <section className={styles.welcome_lastart}>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: false }}
             transition={{
               duration: 0.75,

@@ -4,6 +4,7 @@ import renderElement from "../../../functions/renderElement";
 import styles from "@/styles/modules/articles.module.css";
 import Link from "next/link";
 import RenderLastThree from "@/functions/renderLastThree";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Article() {
@@ -22,7 +23,15 @@ export default function Article() {
   return (
     <>
       <section className={styles.content}>
-        <div className={styles.article}>
+        <motion.div
+          className={styles.article}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.75,
+            delay: 0.25,
+          }}
+        >
           {art?.map((item, index) => {
             let renderedElements = [];
             Object.values(item).forEach((innerItem, innerIndex) => {
@@ -32,8 +41,16 @@ export default function Article() {
             });
             return renderedElements;
           })}
-        </div>
-        <div className={styles.lastest}>
+        </motion.div>
+        <motion.div
+          className={styles.lastest}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.75,
+            delay: 0.25,
+          }}
+        >
           <Link href={"../articulos"} scroll={true} className={styles.return}>
             Regresar
           </Link>
@@ -48,7 +65,7 @@ export default function Article() {
               fill
             />
           </div>
-        </div>
+        </motion.div>
       </section>
       <footer className={styles.footer}>
         <span>Mate y código</span>

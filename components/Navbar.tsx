@@ -6,6 +6,7 @@ import { FcSearch } from "react-icons/fc";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { AppContext } from "@/functions/AppState";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const { searchTerm, setSearchTerm } = useContext(AppContext);
@@ -81,7 +82,12 @@ export default function Navbar() {
         }
       >
         {router.pathname === "/inicio/articulos" && (
-          <div className={styles.navsearch}>
+          <motion.div
+            className={styles.navsearch}
+            initial={{ opacity: 0, width: "0%" }}
+            animate={{ opacity: 1, width: "100%" }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+          >
             <input
               type="text"
               className={styles.navinput}
@@ -90,7 +96,7 @@ export default function Navbar() {
               onChange={handleSearch}
             />
             <FcSearch className={styles.navsearchlogo} />
-          </div>
+          </motion.div>
         )}
       </div>
     </nav>
