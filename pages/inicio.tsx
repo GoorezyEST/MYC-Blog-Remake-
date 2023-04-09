@@ -97,7 +97,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: "15px" }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+              transition={{ delay: 0.25, duration: 0.6 }}
             >
               <h1 className={styles.welcome_title}>Mate y código</h1>
             </motion.div>
@@ -105,7 +105,7 @@ export default function Home() {
               className={styles.welcome_anim}
               initial={{ opacity: 0, x: "-15px" }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.25, duration: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
             >
               <p className={styles.welcome_slogan}>Un lugar para</p>
               <div className={styles.multi_content}>
@@ -113,7 +113,7 @@ export default function Home() {
                   className={styles.multi_words}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 1.75, duration: 0.5 }}
+                  transition={{ delay: 0.75, duration: 0.6 }}
                 >
                   <span className={styles.wordAnim}>Aprender</span>
                   <span className={styles.wordAnim}>Descubrir</span>

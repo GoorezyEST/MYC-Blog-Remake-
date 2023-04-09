@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import meta from "@/data/main-tags.json";
 import { useEffect, useState } from "react";
 
-export default function contacto() {
+export default function Contacto() {
   const [metaData, setMetaData] = useState({
     page: "",
     title: "",

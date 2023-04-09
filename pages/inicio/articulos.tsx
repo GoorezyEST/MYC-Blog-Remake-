@@ -6,7 +6,7 @@ import RenderThumbnails from "@/functions/renderThumbnails";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-export default function articulos() {
+export default function Articulos() {
   const [metaData, setMetaData] = useState({
     page: "",
     title: "",
