@@ -93,8 +93,8 @@ export default function Home() {
 
         <section className={styles.welcome_lastart}>
           <motion.div
-            initial={{ opacity: 0, marginRight: 300 }}
-            whileInView={{ opacity: 1, marginRight: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{
               duration: 0.75,
@@ -106,13 +106,14 @@ export default function Home() {
             </span>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, marginLeft: 300 }}
-            whileInView={{ opacity: 1, marginLeft: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{
               duration: 0.75,
               delay: 0.15,
             }}
+            className={styles.welcomelastartcontainer}
           >
             <LastArticle />
           </motion.div>
@@ -142,6 +143,7 @@ export default function Home() {
                     duration: 0.75,
                     delay: 0.25,
                   }}
+                  className={styles.faqdiv}
                 >
                   <FAQBox faq={item} index={i} toggleFAQ={toggleFAQ} />
                 </motion.div>

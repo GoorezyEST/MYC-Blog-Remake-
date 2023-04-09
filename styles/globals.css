@@ -2,6 +2,8 @@
 
 :root {
   --navbar-height: 105px;
+  --footer-height: 167px;
+  --thumbnails-height: 272px;
 }
 
 * {
@@ -32,4 +34,12 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (max-width: 850px) {
+  :root {
+    --navbar-height: 65px;
+    --footer-height: 112px;
+    --thumbnails-height: 177px;
+  }
 }

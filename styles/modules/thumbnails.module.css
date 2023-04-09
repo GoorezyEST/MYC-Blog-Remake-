@@ -4,7 +4,8 @@
   grid-template-rows: max-content;
   padding: 2rem;
   gap: 2rem;
-  min-height: calc(100vh - var(--navbar-height));
+  min-height: calc(100vh - var(--thumbnails-height));
+  align-content: start;
 }
 
 .notfound {
@@ -42,9 +43,16 @@
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
   cursor: pointer;
   user-select: none;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0 0 1rem rgba(0, 179, 19, 0.25);
 }
 
 .img {
+  position: relative;
   height: 150px;
   width: 150px;
   grid-column: 1 / 2;
@@ -82,7 +90,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 0 2rem 0;
+  padding: 0 0 2rem 0;
 }
 
 .pagination p {
@@ -104,4 +112,133 @@
 
 .paginationBtnImg {
   font-size: 1rem;
+}
+
+@media screen and (max-width: 1220px) {
+  .content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .notfound {
+    grid-column: 1 / 4;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 275px;
+  }
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+  .info {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+  }
+
+  .date {
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    opacity: 0.75;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+  }
+  .text {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .notfound {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .notfound span {
+    font-size: 24px;
+  }
+
+  .notfound p {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .title {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
 }

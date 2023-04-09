@@ -9,21 +9,18 @@ export default function LastArticle() {
 
   return (
     <>
-      <Link
-        className={styles.card}
-        href={"inicio/" + lastThumbnail.link}
-        scroll={false}
-      >
+      <Link className={styles.card} href={"inicio/" + lastThumbnail.link}>
         {lastThumbnail && (
           <>
-            <Image
-              src={lastThumbnail?.img}
-              alt={lastThumbnail?.alt}
-              width={100}
-              height={100}
-              unoptimized={true}
-              className={styles.img}
-            />
+            <div className={styles.img}>
+              <Image
+                src={lastThumbnail?.img}
+                alt={lastThumbnail?.alt}
+                fill
+                sizes="(max-width: 525px) 300px, 150px"
+                unoptimized={true}
+              />
+            </div>
             <div className={styles.info}>
               <span className={styles.title}>{lastThumbnail?.title}</span>
               <p className={styles.text}>{lastThumbnail?.description}</p>

@@ -21,7 +21,6 @@ type JSONObject = {
       alt: string;
       description: string;
       date: string;
-      tipo: string;
       link: string;
     }[];
   };
@@ -33,7 +32,6 @@ type DataArray = {
   alt: string;
   description: string;
   date: string;
-  tipo: string;
   link: string;
 }[];
 
@@ -42,7 +40,7 @@ export default function renderThumbnails(data: JSONObject) {
   const [filteredData, setFilteredData] = useState<DataArray>(jsonData);
   const [page, setPage] = useState(1);
   const [paginatedData, setPaginatedData] = useState<DataArray>([]);
-  const itemsPerPage = 6;
+  const [itemsPerPage, setItemsPerPage] = useState(8);
   const thumbnailsRef = useRef<HTMLElement>(null);
 
   const { searchTerm } = useContext(AppContext);
@@ -54,7 +52,7 @@ export default function renderThumbnails(data: JSONObject) {
       setPaginatedData(filteredData.slice(start, end));
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [filteredData, page, searchTerm]);
+  }, [filteredData, page, searchTerm, itemsPerPage]);
 
   useEffect(() => {
     if (Array.isArray(jsonData)) {
@@ -69,26 +67,43 @@ export default function renderThumbnails(data: JSONObject) {
     }
   }, [searchTerm]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 475);
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      setItemsPerPage(4);
+    } else {
+      setItemsPerPage(8);
+    }
+  }, [isMobile]);
+
   return (
     <>
       <section ref={thumbnailsRef} className={styles.content}>
         {paginatedData && paginatedData.length > 0 ? (
           paginatedData.map((item, index) => {
             return (
-              <Link
-                className={styles.card}
-                key={index}
-                href={item.link}
-                scroll={false}
-              >
-                <Image
-                  src={item.img}
-                  alt={item.alt}
-                  width={100}
-                  height={100}
-                  unoptimized={true}
-                  className={styles.img}
-                />
+              <Link className={styles.card} key={index} href={item.link}>
+                <div className={styles.img}>
+                  <Image
+                    src={item.img}
+                    alt={item.alt}
+                    fill
+                    sizes="(maxwidth: 1000) 300px, 150px"
+                    unoptimized={true}
+                  />
+                </div>
                 <div className={styles.info}>
                   <span className={styles.title}>{item.title}</span>
                   <p className={styles.text}>{item.description}</p>

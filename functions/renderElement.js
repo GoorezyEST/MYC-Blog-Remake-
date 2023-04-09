@@ -7,7 +7,7 @@ import Image from "next/image";
 const renderElement = (item, index) => {
   if (item.hasOwnProperty("text")) {
     return (
-      <div key={index}>
+      <div key={index} className={styles.textContainer}>
         <h3 className={styles.subtitle}>{item.text.title}</h3>
         <p className={styles.text}>{item.text.text}</p>
       </div>

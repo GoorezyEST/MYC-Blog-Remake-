@@ -128,7 +128,7 @@
 /* LAST ART CSS */
 
 .welcome_lastart {
-  height: 80vh;
+  height: calc(100vh - var(--navbar-height));
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -143,6 +143,13 @@
   color: rgb(0, 175, 29);
   cursor: default;
   user-select: none;
+}
+
+.welcomelastartcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* FAQ CSS */
@@ -171,4 +178,76 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+.faqdiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 775px) {
+  .faq_title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .welcome_lastspan {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .welcome_title {
+    font-size: 32px;
+    font-weight: 800;
+  }
+
+  .welcome_slogan {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .multi_content {
+    height: 34px;
+    font-size: 24px;
+  }
+
+  .welcome_down {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .welcome_lastspan {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+@media screen and (max-width: 325px) {
+  .faq_title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .welcome_title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .welcome_slogan {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .multi_content {
+    height: 26px;
+    font-size: 16px;
+  }
+
+  .welcome_down {
+    height: 16px;
+    width: 16px;
+  }
 }

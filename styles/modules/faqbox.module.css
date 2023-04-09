@@ -62,3 +62,27 @@
   max-height: 1000px;
   opacity: 1;
 }
+
+@media screen and (max-width: 775px) {
+  .faq {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .faq {
+    padding: 0.75rem;
+  }
+  .faq_question {
+    font-size: 13px;
+    font-weight: 500;
+    padding-right: 20px;
+  }
+  .faq_answer {
+    font-size: 10px;
+  }
+  .faq_question::after {
+    width: 12px;
+    height: 12px;
+  }
+}
