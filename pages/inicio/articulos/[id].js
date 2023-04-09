@@ -6,12 +6,21 @@ import Link from "next/link";
 import RenderLastThree from "@/functions/renderLastThree";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import CustomHead from "@/components/CustomHead";
+import meta from "@/data/articles-tags.json";
 
 export default function Article() {
   const router = useRouter();
   const { id } = router.query;
+  const [metaData, setMetaData] = useState({
+    title: "",
+    description: "",
+    url: "",
+    image: "",
+  });
 
-  let art;
+  let art = null;
 
   data.articles.map((item) => {
     if (item[1].url === id) {
@@ -20,8 +29,19 @@ export default function Article() {
     }
   });
 
+  useEffect(() => {
+    meta.forEach((item) => {
+      if (art !== null) {
+        if (item.url === art[1].url) {
+          setMetaData(item);
+        }
+      }
+    });
+  }, [art]);
+
   return (
     <>
+      <CustomHead obj={metaData} />
       <section className={styles.content}>
         <motion.div
           className={styles.article}

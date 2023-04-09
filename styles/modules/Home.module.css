@@ -103,7 +103,7 @@
   margin-top: 1.5rem;
   animation: goDown 2.5s linear 5s infinite;
   transition: opacity 1s ease-in-out;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
 }
 
@@ -217,6 +217,12 @@
   .welcome_down {
     height: 24px;
     width: 24px;
+  }
+
+  .welcome_main,
+  .welcome_lastart,
+  .faq_section {
+    height: 80vh;
   }
 }
 

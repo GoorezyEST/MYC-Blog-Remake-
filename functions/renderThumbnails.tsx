@@ -102,6 +102,7 @@ export default function renderThumbnails(data: JSONObject) {
                     fill
                     sizes="(maxwidth: 1000) 300px, 150px"
                     unoptimized={true}
+                    loading="lazy"
                   />
                 </div>
                 <div className={styles.info}>

@@ -1,0 +1,20 @@
+[
+  {
+    "page": "inicio",
+    "title": "MYC - Inicio",
+    "description": "El inicio",
+    "image": "https://i.imgur.com/wuiCOXU.png"
+  },
+  {
+    "page": "articulos",
+    "title": "MYC - Artículos",
+    "description": "Los artículos",
+    "image": "https://i.imgur.com/wuiCOXU.png"
+  },
+  {
+    "page": "contacto",
+    "title": "MYC - Contacto",
+    "description": "El contacto",
+    "image": "https://i.imgur.com/wuiCOXU.png"
+  }
+]
