@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import FAQBox from "@/functions/FAQBox";
 import Footer from "@/components/Footer";
 import CustomHead from "@/components/CustomHead";
+import { GetServerSideProps } from "next";
 import meta from "@/data/main-tags.json";
 
 type Faq = {
@@ -14,29 +15,15 @@ type Faq = {
   open: boolean;
 };
 
-export default function Home() {
+type MetaTags = {
+  title: string;
+  description: string;
+  image: string;
+};
+
+export default function Home({ obj }: Props) {
   const [show, setShow] = useState(false);
   const scrollRef = useRef<HTMLElement>(null);
-
-  const [metaData, setMetaData] = useState({
-    page: "",
-    title: "",
-    description: "",
-    image: "",
-  });
-
-  useEffect(() => {
-    meta.map((item) => {
-      if (item.page === "inicio") {
-        setMetaData({
-          page: item.page,
-          title: item.title,
-          description: item.description,
-          image: item.image,
-        });
-      }
-    });
-  }, []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -90,7 +77,7 @@ export default function Home() {
 
   return (
     <>
-      {metaData.title !== "" && <CustomHead obj={metaData} />}
+      <CustomHead obj={obj} />
       <main className={styles.welcome_main}>
         <div className={styles.welcome_section}>
           <div className={styles.welcome_text}>
@@ -196,3 +183,31 @@ export default function Home() {
     </>
   );
 }
+
+interface Props {
+  obj: MetaTags;
+}
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  let metaTags: MetaTags = {
+    title: "",
+    description: "",
+    image: "",
+  };
+
+  meta.map((item) => {
+    if (item.page === "contacto") {
+      metaTags = {
+        title: item.title,
+        description: item.description,
+        image: item.image,
+      };
+    }
+  });
+
+  return {
+    props: {
+      obj: metaTags,
+    },
+  };
+};

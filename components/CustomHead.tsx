@@ -1,10 +1,8 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import React from "react";
 
 type Props = {
   obj: {
-    page: string;
     title: string;
     description: string;
     image: string;
@@ -12,8 +10,6 @@ type Props = {
 };
 
 export default function CustomHead({ obj }: Props) {
-  const route = useRouter();
-
   return (
     <>
       <Head>
@@ -23,7 +19,6 @@ export default function CustomHead({ obj }: Props) {
         <meta property="og:title" content={obj.title} />
         <meta property="og:description" content={obj.description} />
         <meta property="og:image" content={obj.image} />
-        <meta property="og:url" content={route.pathname} />
         <meta property="og:site_name" content="Mate y Código" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
