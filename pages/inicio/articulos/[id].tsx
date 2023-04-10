@@ -1,3 +1,4 @@
+import React from "react";
 import { useRouter } from "next/router";
 import data from "@/data/articles.json";
 import renderElement from "../../../functions/renderElement";
@@ -6,60 +7,15 @@ import Link from "next/link";
 import RenderLastThree from "@/functions/renderLastThree";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import CustomHead from "@/components/CustomHead";
 import meta from "@/data/articles-tags.json";
+import { GetServerSideProps } from "next";
 
-export async function GetServerSideProps() {
-  const router = useRouter();
-  const { id } = router.query;
-
-  let data = {
-    title: "",
-    description: "",
-    image: "",
-  };
-
-  data.articles.map((item) => {
-    if (item[1].url === id) {
-      data = item;
-      return;
-    }
-  });
-
-  meta.forEach((item) => {
-    if (data !== null) {
-      if (item.url === data[1].url) {
-        data = {
-          title: item.title,
-          description: item.description,
-          image: item.image,
-        };
-      }
-    }
-  });
-
-  return {
-    props: {
-      data,
-    },
-  };
-}
-
-export default function Article(props) {
-  const router = useRouter();
-  const { id } = router.query;
-  let art;
-
-  data.articles.map((item) => {
-    if (item[1].url === id) {
-      art = item;
-      return;
-    }
-  });
-
+export default function Article({ metaTags, articleToMap }: Props) {
   return (
     <>
-      <CustomHead obj={props.data} />
+      <CustomHead obj={metaTags} />
       <section className={styles.content}>
         <motion.div
           className={styles.article}
@@ -70,14 +26,8 @@ export default function Article(props) {
             delay: 0.25,
           }}
         >
-          {art?.map((item, index) => {
-            let renderedElements = [];
-            Object.values(item).forEach((innerItem, innerIndex) => {
-              Object.values(innerItem).forEach((element, elementIndex) => {
-                renderedElements.push(renderElement(element, elementIndex));
-              });
-            });
-            return renderedElements;
+          {articleToMap.content.map((item: Content, index: number) => {
+            return renderElement(item, index);
           })}
         </motion.div>
         <motion.div
@@ -113,3 +63,87 @@ export default function Article(props) {
     </>
   );
 }
+
+interface Props {
+  metaTags: MetaTags;
+  articleToMap: Article;
+}
+
+type MetaTags = {
+  title: string;
+  description: string;
+  image: string;
+};
+
+interface Article {
+  content: Content[];
+}
+
+interface Content {
+  title?: Title;
+  text?: Text;
+  img?: Img;
+  link?: Link;
+}
+
+interface Img {
+  src: string;
+  alt: string;
+}
+
+interface Link {
+  title: string;
+  link: string;
+}
+
+interface Text {
+  title: string;
+  text: string;
+}
+
+interface Title {
+  title: string;
+}
+
+export const getServerSideProps: GetServerSideProps<Props> = async (
+  context
+) => {
+  const { id } = context.query;
+
+  let metaData: MetaTags = {
+    title: "",
+    description: "",
+    image: "",
+  };
+
+  let article: Article = {
+    content: [],
+  };
+
+  data.articles.map((item) => {
+    if (item[1].url === id) {
+      const content = item[2].content;
+      if (Array.isArray(content)) {
+        article = { content };
+      }
+      return;
+    }
+  });
+
+  meta.map((item) => {
+    if (item.url === id) {
+      metaData = {
+        title: item.title,
+        description: item.description,
+        image: item.image,
+      };
+    }
+  });
+
+  return {
+    props: {
+      metaTags: metaData,
+      articleToMap: article,
+    },
+  };
+};
