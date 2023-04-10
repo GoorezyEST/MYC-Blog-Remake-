@@ -25,7 +25,7 @@
       "link": "articulos/etiquetas-meta"
     },
     {
-      "title": "Singleton",
+      "title": "Patrón de diseño: Singleton",
       "img": "https://i.imgur.com/x1BDrEz.png",
       "alt": "Photo related to the article",
       "description": "Un patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto. ¡Aprende singleton!",
@@ -33,7 +33,7 @@
       "link": "articulos/pd-singleton"
     },
     {
-      "title": "Factory",
+      "title": "Patrón de diseño: Factory",
       "img": "https://i.imgur.com/mnma9M5.png",
       "alt": "Photo related to the article",
       "description": "El patrón factory consiste en utilizar una clase constructora abstracta con unos cuantos métodos definidos y otro abstracto. ¡Click aquí para ver!",
@@ -41,7 +41,7 @@
       "link": "articulos/pd-factory"
     },
     {
-      "title": "Abstract factory",
+      "title": "Patrón de diseño: Abstract factory",
       "img": "https://i.imgur.com/F5ffBQF.png",
       "alt": "Photo related to the article",
       "description": "Abstract Factory es un patrón de diseño creacional que resuelve el problema de crear familias enteras de productos sin especificar sus clases concretas. ¡Ver aquí!",
@@ -49,7 +49,7 @@
       "link": "articulos/pd-abstract-factory"
     },
     {
-      "title": "Prototype",
+      "title": "Patrón de diseño: Prototype",
       "img": "https://i.imgur.com/vfqqXfr.png",
       "alt": "Photo related to the article",
       "description": "El patrón de diseño prototipo tiene como finalidad crear nuevos objetos clonando una instancia creada previamente. Para aprenderlo haz click aquí.",
@@ -57,7 +57,7 @@
       "link": "articulos/pd-prototype"
     },
     {
-      "title": "Facade",
+      "title": "Patrón de diseño: Facade",
       "img": "https://i.imgur.com/GmDH1Xz.png",
       "alt": "Photo related to the article",
       "description": "El patrón de diseño facade está motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.",
@@ -73,7 +73,7 @@
       "link": "articulos/corazon-css"
     },
     {
-      "title": "Decorator",
+      "title": "Patrón de diseño: Decorator",
       "img": "https://i.imgur.com/WFV99Ml.png",
       "alt": "Photo related to the article",
       "description": "Nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.",
@@ -81,7 +81,7 @@
       "link": "articulos/pd-decorator"
     },
     {
-      "title": "Proxy",
+      "title": "Patrón de diseño: Proxy",
       "img": "https://i.imgur.com/POtV7XZ.png",
       "alt": "Photo related to the article",
       "description": "El patrón Proxy es un patrón estructural que tiene como propósito proporcionar un subrogado o intermediario de un objeto para controlar su acceso. ¡Click para ver más!",

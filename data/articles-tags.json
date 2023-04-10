@@ -18,31 +18,31 @@
     "image": "https://i.imgur.com/VpQdObN.png"
   },
   {
-    "title": "MYC - Singleton",
+    "title": "MYC - Patrón de diseño: Singleton",
     "description": "Un patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto. ¡Aprende singleton!",
     "url": "pd-singleton",
     "image": "https://i.imgur.com/x1BDrEz.png"
   },
   {
-    "title": "MYC - Factory",
+    "title": "MYC - Patrón de diseño: Factory",
     "description": "El patrón factory consiste en utilizar una clase constructora abstracta con unos cuantos métodos definidos y otro abstracto. ¡Click aquí para ver!",
     "url": "pd-factory",
     "image": "https://i.imgur.com/mnma9M5.png"
   },
   {
-    "title": "MYC - Abstract Factory",
+    "title": "MYC - Patrón de diseño: Abstract Factory",
     "description": "Abstract Factory es un patrón de diseño creacional que resuelve el problema de crear familias enteras de productos sin especificar sus clases concretas. ¡Ver aquí!",
     "url": "pd-abstract-factory",
     "image": "https://i.imgur.com/F5ffBQF.png"
   },
   {
-    "title": "MYC - Prototype",
+    "title": "MYC - Patrón de diseño: Prototype",
     "description": "El patrón de diseño prototipo tiene como finalidad crear nuevos objetos clonando una instancia creada previamente. Para aprenderlo haz click aquí.",
     "url": "pd-prototype",
     "image": "https://i.imgur.com/vfqqXfr.png"
   },
   {
-    "title": "MYC - Facade",
+    "title": "MYC - Patrón de diseño: Facade",
     "description": "El patrón de diseño facade está motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.",
     "url": "pd-facade",
     "image": "https://i.imgur.com/GmDH1Xz.png"
@@ -54,13 +54,13 @@
     "image": "https://i.imgur.com/3bZdWyx.png"
   },
   {
-    "title": "MYC - Decorator",
+    "title": "MYC - Patrón de diseño: Decorator",
     "description": "Nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.",
     "url": "pd-decorator",
     "image": "https://i.imgur.com/WFV99Ml.png"
   },
   {
-    "title": "MYC - Proxy",
+    "title": "MYC - Patrón de diseño: Proxy",
     "description": "El patrón Proxy es un patrón estructural que tiene como propósito proporcionar un subrogado o intermediario de un objeto para controlar su acceso. ¡Click para ver más!",
     "url": "pd-proxy",
     "image": "https://i.imgur.com/POtV7XZ.png"
