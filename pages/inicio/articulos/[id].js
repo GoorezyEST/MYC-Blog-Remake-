@@ -46,6 +46,8 @@ export async function GetServerSideProps() {
 }
 
 export default function Article(props) {
+  const router = useRouter();
+  const { id } = router.query;
   let art;
 
   data.articles.map((item) => {
