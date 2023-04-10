@@ -196,7 +196,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   };
 
   meta.map((item) => {
-    if (item.page === "contacto") {
+    if (item.page === "inicio") {
       metaTags = {
         title: item.title,
         description: item.description,

@@ -5,32 +5,18 @@ import { FaLinkedin, FaGithubSquare, FaAt } from "react-icons/fa";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import meta from "@/data/main-tags.json";
-import { useEffect, useState } from "react";
+import { GetServerSideProps } from "next";
 
-export default function Contacto() {
-  const [metaData, setMetaData] = useState({
-    page: "",
-    title: "",
-    description: "",
-    image: "",
-  });
+type MetaTags = {
+  title: string;
+  description: string;
+  image: string;
+};
 
-  useEffect(() => {
-    meta.map((item) => {
-      if (item.page === "contacto") {
-        setMetaData({
-          page: item.page,
-          title: item.title,
-          description: item.description,
-          image: item.image,
-        });
-      }
-    });
-  }, []);
-
+export default function Contacto({ obj }: Props) {
   return (
     <>
-      <CustomHead obj={metaData} />
+      <CustomHead obj={obj} />
       <main className={styles.content}>
         <motion.div
           initial={{ opacity: 0 }}
@@ -117,3 +103,31 @@ export default function Contacto() {
     </>
   );
 }
+
+interface Props {
+  obj: MetaTags;
+}
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  let metaTags: MetaTags = {
+    title: "",
+    description: "",
+    image: "",
+  };
+
+  meta.map((item) => {
+    if (item.page === "contacto") {
+      metaTags = {
+        title: item.title,
+        description: item.description,
+        image: item.image,
+      };
+    }
+  });
+
+  return {
+    props: {
+      obj: metaTags,
+    },
+  };
+};

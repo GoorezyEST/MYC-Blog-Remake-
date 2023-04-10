@@ -6,21 +6,48 @@ import Link from "next/link";
 import RenderLastThree from "@/functions/renderLastThree";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { GetServerSideProps } from "next";
 import CustomHead from "@/components/CustomHead";
 import meta from "@/data/articles-tags.json";
 
-export default function Article() {
+export async function GetServerSideProps() {
   const router = useRouter();
   const { id } = router.query;
-  const [metaData, setMetaData] = useState({
+
+  let data = {
     title: "",
     description: "",
-    url: "",
     image: "",
+  };
+
+  data.articles.map((item) => {
+    if (item[1].url === id) {
+      data = item;
+      return;
+    }
   });
 
-  let art = null;
+  meta.forEach((item) => {
+    if (data !== null) {
+      if (item.url === data[1].url) {
+        data = {
+          title: item.title,
+          description: item.description,
+          image: item.image,
+        };
+      }
+    }
+  });
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function Article(props) {
+  let art;
 
   data.articles.map((item) => {
     if (item[1].url === id) {
@@ -29,19 +56,9 @@ export default function Article() {
     }
   });
 
-  useEffect(() => {
-    meta.forEach((item) => {
-      if (art !== null) {
-        if (item.url === art[1].url) {
-          setMetaData(item);
-        }
-      }
-    });
-  }, [art]);
-
   return (
     <>
-      <CustomHead obj={metaData} />
+      <CustomHead obj={props.data} />
       <section className={styles.content}>
         <motion.div
           className={styles.article}
