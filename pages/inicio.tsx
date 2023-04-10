@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <>
-      <CustomHead obj={metaData} />
+      {metaData.title !== "" && <CustomHead obj={metaData} />}
       <main className={styles.welcome_main}>
         <div className={styles.welcome_section}>
           <div className={styles.welcome_text}>

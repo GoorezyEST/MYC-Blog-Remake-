@@ -20,9 +20,9 @@ export default function CustomHead({ obj }: Props) {
         <title>{obj.title}</title>
         <meta name="description" content={obj.description} />
 
-        <meta property="og:title" content="Mate y Código" />
-        <meta property="og:description" content="12345" />
-        <meta property="og:image" content="https://i.imgur.com/mnEdwzR.png" />
+        <meta property="og:title" content={obj.title} />
+        <meta property="og:description" content={obj.description} />
+        <meta property="og:image" content={obj.image} />
         <meta property="og:url" content={route.pathname} />
         <meta property="og:site_name" content="Mate y Código" />
 
