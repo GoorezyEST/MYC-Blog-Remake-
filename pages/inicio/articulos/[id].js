@@ -6,7 +6,6 @@ import Link from "next/link";
 import RenderLastThree from "@/functions/renderLastThree";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { GetServerSideProps } from "next";
 import CustomHead from "@/components/CustomHead";
 import meta from "@/data/articles-tags.json";
 
