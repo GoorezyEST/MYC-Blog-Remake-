@@ -3,18 +3,18 @@
     "page": "inicio",
     "title": "MYC - Inicio",
     "description": "Mate y Código es un blog de tecnología y programación creado por un desarrollador para compartir sus conocimientos desarrolladores.\n¡Ingresa a la página principal de Mate y Código haciendo click aquí!",
-    "image": "https://i.imgur.com/OlNIafu.png"
+    "image": "https://i.imgur.com/mSZKzeS.png"
   },
   {
     "page": "articulos",
     "title": "MYC - Artículos",
     "description": "Desde artículos sobre frameworks a tutoriales simples y concisos de efectos CSS, en Mate y Código podrás encontrar una amplia variedad de información relacionada a la tecnología y la programación.\n¡Mira los artículos de Mate y Código haciendo click aquí!",
-    "image": "https://i.imgur.com/i4Y47k7.png"
+    "image": "https://i.imgur.com/T4gxqXx.png"
   },
   {
     "page": "contacto",
     "title": "MYC - Contacto",
     "description": "¿Quieres contactar con el desarrollador de Mate y Código? Pues aquí podrás encontrar los medios de contactos para hacerlo.\n¡Ponte en contacto haciendo click aquí!",
-    "image": "https://i.imgur.com/TP4y52Y.png"
+    "image": "https://i.imgur.com/A18TdVj.png"
   }
 ]

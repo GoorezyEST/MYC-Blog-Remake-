@@ -18,8 +18,9 @@ export default function CustomHead({ obj }: Props) {
 
         <meta property="og:title" content={obj.title} />
         <meta property="og:description" content={obj.description} />
-        <meta property="og:image" content={obj.image} />
+        <meta property="og:image" itemProp="image" content={obj.image} />
         <meta property="og:site_name" content="Mate y Código" />
+        <meta property="og:type" content="website" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icons/favicon.ico" />
