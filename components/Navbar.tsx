@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "@/styles/modules/navbar.module.css";
 import Link from "next/link";
-import { FcSearch } from "react-icons/fc";
+import { BiSearchAlt2 } from "react-icons/bi";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { AppContext } from "@/functions/AppState";
@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navlogo}>
+      <Link className={styles.navlogo} href="/inicio">
         <Image
           src="https://svgshare.com/i/rjT.svg"
           alt="Mate y código logo"
@@ -47,7 +47,7 @@ export default function Navbar() {
           sizes="(max-width: 850px) 32px, 64px"
           priority
         />
-      </div>
+      </Link>
       <ul className={styles.navul}>
         <Link
           href="/inicio"
@@ -95,7 +95,7 @@ export default function Navbar() {
               value={searchTerm}
               onChange={handleSearch}
             />
-            <FcSearch className={styles.navsearchlogo} />
+            <BiSearchAlt2 className={styles.navsearchlogo} />
           </motion.div>
         )}
       </div>

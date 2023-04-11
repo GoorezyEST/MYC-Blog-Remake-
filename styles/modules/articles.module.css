@@ -63,6 +63,8 @@
   font-size: 24px;
   font-weight: 600;
   color: rgb(0, 0, 0);
+  cursor: default;
+  user-select: none;
 }
 
 .footer {
@@ -74,6 +76,8 @@
   background-color: rgb(40, 40, 40);
   padding: 1rem;
   gap: 1rem;
+  user-select: none;
+  cursor: default;
 }
 
 .footer span {

@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: rgb(40, 40, 40);
 }
 
 .navul {
@@ -15,7 +16,7 @@
 
 .navul * {
   text-decoration: none;
-  color: rgba(40, 40, 40, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -56,14 +57,16 @@
   padding: 0.75rem 2rem 0.75rem 0.75rem;
   font-weight: 400;
   border-radius: 1rem;
-  border: 1px solid rgba(40, 40, 40, 0.25);
-  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--input-border);
+  background-color: transparent;
   outline: none;
   transition: all 0.25s;
+  user-select: none;
+  color: var(--input-border-focus);
 }
 
 .navinput:focus {
-  border-color: rgba(40, 40, 40, 0.95);
+  border-color: var(--input-border-focus);
 }
 
 .navsearchlogo {
@@ -71,7 +74,8 @@
   right: 0.75rem;
   width: 18px;
   height: 18px;
-  cursor: pointer;
+  cursor: default;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 850px) {
@@ -90,7 +94,6 @@
   }
   .navul * {
     text-decoration: none;
-    color: rgba(40, 40, 40, 0.5);
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -105,8 +108,6 @@
     padding: 0.5rem 1.5rem 0.5rem 1rem;
     font-weight: 400;
     border-radius: 1rem;
-    border: 0.5px solid rgba(40, 40, 40, 0.25);
-    background-color: rgba(255, 255, 255, 0.15);
     outline: none;
     transition: all 0.25s;
   }
@@ -137,7 +138,6 @@
   }
   .navul * {
     text-decoration: none;
-    color: rgba(40, 40, 40, 0.5);
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -152,8 +152,6 @@
     padding: 0.5rem 1.5rem 0.5rem 1rem;
     font-weight: 400;
     border-radius: 1rem;
-    border: 0.5px solid rgba(40, 40, 40, 0.25);
-    background-color: rgba(255, 255, 255, 0.15);
     outline: none;
     transition: all 0.25s;
   }
@@ -187,7 +185,6 @@
   }
   .navul * {
     text-decoration: none;
-    color: rgba(40, 40, 40, 0.5);
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -206,7 +203,6 @@
 @media screen and (max-width: 325px) {
   .navul * {
     text-decoration: none;
-    color: rgba(40, 40, 40, 0.5);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -223,8 +219,6 @@
     padding: 0.5rem 1.5rem 0.5rem 0.5rem;
     font-weight: 400;
     border-radius: 1rem;
-    border: 0.5px solid rgba(40, 40, 40, 0.25);
-    background-color: rgba(255, 255, 255, 0.15);
     outline: none;
     transition: all 0.25s;
   }
