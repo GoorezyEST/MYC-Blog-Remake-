@@ -208,7 +208,7 @@
       }
     ],
     [
-      { "title": "Patrón de diseño: Singleton" },
+      { "title": "PD: Singleton" },
       { "url": "pd-singleton" },
       {
         "content": [
@@ -269,7 +269,7 @@
       }
     ],
     [
-      { "title": "Patrón de diseño: Factory" },
+      { "title": "PD: Factory" },
       { "url": "pd-factory" },
       {
         "content": [
@@ -330,7 +330,7 @@
       }
     ],
     [
-      { "title": "Patrón de diseño: Abstract Factory" },
+      { "title": "PD: Abstract Factory" },
       { "url": "pd-abstract-factory" },
       {
         "content": [
@@ -391,7 +391,7 @@
       }
     ],
     [
-      { "title": "Patrón de diseño: Prototype" },
+      { "title": "PD: Prototype" },
       { "url": "pd-prototype" },
       {
         "content": [
@@ -452,7 +452,7 @@
       }
     ],
     [
-      { "title": "Patrón de diseño: Facade" },
+      { "title": "PD: Facade" },
       { "url": "pd-facade" },
       {
         "content": [
@@ -598,7 +598,7 @@
       }
     ],
     [
-      { "title": "Patrón de diseño: Decorator" },
+      { "title": "PD: Decorator" },
       { "url": "pd-decorator" },
       {
         "content": [
@@ -659,7 +659,7 @@
       }
     ],
     [
-      { "title": "Patrón de diseño: Proxy" },
+      { "title": "PD: Proxy" },
       { "url": "pd-proxy" },
       {
         "content": [
