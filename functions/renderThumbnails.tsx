@@ -10,7 +10,6 @@ import {
 } from "react-icons/fa";
 import { useContext } from "react";
 import { AppContext } from "@/functions/AppState";
-import { type } from "os";
 import Link from "next/link";
 
 type JSONObject = {
@@ -42,7 +41,6 @@ export default function renderThumbnails(data: JSONObject) {
   const [paginatedData, setPaginatedData] = useState<DataArray>([]);
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const thumbnailsRef = useRef<HTMLElement>(null);
-
   const { searchTerm } = useContext(AppContext);
 
   useEffect(() => {
@@ -101,7 +99,7 @@ export default function renderThumbnails(data: JSONObject) {
                     alt={item.alt}
                     fill
                     sizes="(maxwidth: 1000) 300px, 150px"
-                    unoptimized={true}
+                    unoptimized={false}
                     loading="lazy"
                   />
                 </div>

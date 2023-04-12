@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import data from "@/data/articles.json";
 import renderElement from "../../../functions/renderElement";
 import styles from "@/styles/modules/articles.module.css";
@@ -7,7 +6,6 @@ import Link from "next/link";
 import RenderLastThree from "@/functions/renderLastThree";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import CustomHead from "@/components/CustomHead";
 import meta from "@/data/articles-tags.json";
 import { GetServerSideProps } from "next";

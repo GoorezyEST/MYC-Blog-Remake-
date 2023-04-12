@@ -1,7 +1,7 @@
 .content {
   display: grid;
   grid-template-columns: 1fr auto;
-  padding: 1rem 4rem 2rem 4rem;
+  padding: 2rem 4rem;
   gap: 12rem;
   position: relative;
   min-height: calc(100vh - var(--navbar-height));
@@ -100,7 +100,7 @@
 
 @media screen and (max-width: 1100px) {
   .content {
-    padding: 1rem 3rem 2rem 3rem;
+    padding: 2rem 3rem;
     gap: 8rem;
   }
 }
@@ -152,7 +152,7 @@
 
 @media screen and (max-width: 500px) {
   .content {
-    padding: 0rem 1rem 1rem 1rem;
+    padding: 1rem;
   }
   .footer span {
     font-size: 16px;

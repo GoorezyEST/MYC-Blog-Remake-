@@ -14,7 +14,7 @@ export default function RenderLastThree() {
         lastThreeThumbnails.map((item, index) => {
           let url = item.link.replace("articulos", ".");
           return (
-            <div key={index} className={styles.card}>
+            <Link key={index} className={styles.card} href={url}>
               <div className={styles.img}>
                 <Image
                   src={item?.img}
@@ -30,7 +30,7 @@ export default function RenderLastThree() {
                   <span className={styles.date}>{item?.date}</span>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
     </>
