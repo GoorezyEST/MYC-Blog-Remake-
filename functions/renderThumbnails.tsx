@@ -42,6 +42,23 @@ export default function renderThumbnails(data: JSONObject) {
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const thumbnailsRef = useRef<HTMLElement>(null);
   const { searchTerm } = useContext(AppContext);
+  const [counter, setCounter] = useState(0);
+  const [loading, setLoading] = useState<Boolean>(false);
+
+  const handleImageLoad = () => {
+    setCounter((prevCounter) => {
+      return prevCounter + 1;
+    });
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    setCounter(0);
+  }, [page]);
+
+  useEffect(() => {
+    if (counter !== 0) setLoading(false);
+  }, [counter]);
 
   useEffect(() => {
     if (Array.isArray(filteredData)) {
@@ -99,9 +116,13 @@ export default function renderThumbnails(data: JSONObject) {
                     alt={item.alt}
                     fill
                     sizes="(maxwidth: 1000) 300px, 150px"
-                    unoptimized={false}
-                    loading="lazy"
+                    onLoad={() => handleImageLoad()}
                   />
+                  {loading && (
+                    <div className={styles.loadingContainer}>
+                      <span></span>
+                    </div>
+                  )}
                 </div>
                 <div className={styles.info}>
                   <span className={styles.title}>{item.title}</span>
