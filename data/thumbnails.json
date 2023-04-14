@@ -4,7 +4,7 @@
       "title": "Carta 3D CSS",
       "img": "https://i.imgur.com/txQzjog.png",
       "alt": "Photo related to the article",
-      "description": "Descubre cómo dar vida a tus proyectos con solo HTML y CSS al crear un impresionante efecto 3D al pasar el cursor sobre una carta. ¡Haz clic aquí para aprender más y darle un toque especial a tus diseños!",
+      "description": "Aprende a crear un efecto 3D en tus proyectos con solo HTML y CSS al pasar el cursor sobre una carta. Dale un toque especial a tus diseños haciendo clic aquí para saber más.",
       "date": "15 / 1 / 2023",
       "link": "articulos/carta-3d-css"
     },
@@ -60,7 +60,7 @@
       "title": "PD: Facade",
       "img": "https://i.imgur.com/GmDH1Xz.png",
       "alt": "Photo related to the article",
-      "description": "El patrón de diseño facade está motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.",
+      "description": "El patrón de diseño facade está motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, ¡Ver aquí!",
       "date": "17 / 2 / 2023",
       "link": "articulos/pd-facade"
     },
