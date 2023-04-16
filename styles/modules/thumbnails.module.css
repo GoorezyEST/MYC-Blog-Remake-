@@ -4,7 +4,7 @@
   grid-template-rows: max-content;
   padding: 2rem;
   gap: 2rem;
-  min-height: calc(100vh - var(--thumbnails-height));
+  min-height: calc(100vh - 51px - var(--navbar-height));
   align-content: start;
 }
 
